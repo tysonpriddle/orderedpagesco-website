@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>30 Free reMarkable Templates — Ordered Pages Co</title>
+  <meta name="description" content="Download 30 free reMarkable templates for budgeting, planning, and wellness. Compatible with GoodNotes and Notability. Instant download, no sign-up required.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cream: #F5F0E8;
+      --navy: #1E2D3D;
+      --gold: #B8895A;
+      --gold-light: rgba(184, 137, 90, 0.15);
+      --gold-border: rgba(184, 137, 90, 0.35);
+      --off-white: #F7F4EF;
+      --text-muted: rgba(30, 45, 61, 0.55);
+      --card-shadow: 0 2px 16px rgba(30, 45, 61, 0.08);
+      --card-shadow-hover: 0 8px 32px rgba(30, 45, 61, 0.14);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--off-white);
+      color: var(--navy);
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--navy);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-monogram {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--gold-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      letter-spacing: 1px;
+      color: var(--off-white);
+    }
+
+    .nav-name {
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--off-white);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(247, 244, 239, 0.65);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--gold); }
+
+    .nav-links .cta-link {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 8px 20px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links .cta-link:hover { opacity: 0.85; color: var(--navy); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      padding: 80px 40px 88px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(184, 137, 90, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 58px);
+      font-weight: 400;
+      color: var(--off-white);
+      line-height: 1.2;
+      margin-bottom: 20px;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      color: rgba(247, 244, 239, 0.6);
+      max-width: 480px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    .hero-badges {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      color: rgba(247, 244, 239, 0.65);
+      letter-spacing: 0.5px;
+    }
+
+    .badge-icon {
+      width: 18px;
+      height: 18px;
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .badge-icon svg {
+      width: 10px;
+      height: 10px;
+      fill: none;
+    }
+
+    /* ── FILTER BAR ── */
+    .filter-bar {
+      background: var(--cream);
+      border-bottom: 1px solid rgba(30, 45, 61, 0.08);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      position: sticky;
+      top: 64px;
+      z-index: 90;
+    }
+
+    .filter-btn {
+      background: none;
+      border: none;
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 18px 20px;
+      cursor: pointer;
+      position: relative;
+      transition: color 0.2s;
+    }
+
+    .filter-btn::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      right: 20px;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.2s;
+    }
+
+    .filter-btn:hover { color: var(--navy); }
+
+    .filter-btn.active {
+      color: var(--navy);
+    }
+
+    .filter-btn.active::after {
+      transform: scaleX(1);
+    }
+
+    .filter-count {
+      font-size: 11px;
+      background: var(--gold-light);
+      color: var(--gold);
+      border-radius: 10px;
+      padding: 1px 7px;
+      margin-left: 5px;
+      font-weight: 600;
+    }
+
+    /* ── GALLERY SECTION ── */
+    .gallery-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 56px 40px 80px;
+    }
+
+    .gallery-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .gallery-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    .gallery-count {
+      font-size: 13px;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    .template-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    /* ── TEMPLATE CARD ── */
+    .template-card {
+      background: #fff;
+      border: 1px solid rgba(30, 45, 61, 0.07);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .template-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .card-image {
+      aspect-ratio: 4 / 3;
+      background: var(--cream);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .card-image img.loaded {
+      opacity: 1;
+    }
+
+    /* Placeholder shown while image loads */
+    .card-image-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: var(--cream);
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+
+    .card-image-placeholder.hidden {
+      opacity: 0;
+    }
+
+    .placeholder-monogram {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--gold-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: var(--gold);
+    }
+
+    .placeholder-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .card-body {
+      padding: 20px 22px 12px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 10px;
+    }
+
+    .category-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 2px;
+    }
+
+    .category-badge.budget {
+      background: rgba(184, 137, 90, 0.12);
+      color: #8B6340;
+    }
+
+    .category-badge.planner {
+      background: rgba(30, 45, 61, 0.08);
+      color: var(--navy);
+    }
+
+    .category-badge.wellness {
+      background: rgba(80, 120, 90, 0.1);
+      color: #3D6B4A;
+    }
+
+    .card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.35;
+      color: var(--navy);
+    }
+
+    .card-compat {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.3px;
+    }
+
+    .card-footer {
+      padding: 0 22px 22px;
+      margin-top: auto;
+    }
+
+    .btn-download {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--navy);
+      color: var(--off-white);
+      text-decoration: none;
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 13px 20px;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+
+    .btn-download:hover {
+      background: #283D52;
+    }
+
+    /* ── PREMIUM CTA SECTION ── */
+    .premium-section {
+      background: var(--navy);
+      padding: 80px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .premium-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 50% 120% at 50% 0%, rgba(184, 137, 90, 0.1) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .premium-rule {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+      margin: 0 auto 28px;
+    }
+
+    .premium-eyebrow {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .premium-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 400;
+      color: var(--off-white);
+      line-height: 1.25;
+      max-width: 560px;
+      margin: 0 auto 16px;
+    }
+
+    .premium-section h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .premium-sub {
+      font-size: 15px;
+      color: rgba(247, 244, 239, 0.55);
+      max-width: 420px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    .premium-features {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .pf-item {
+      font-size: 13px;
+      color: rgba(247, 244, 239, 0.6);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pf-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .btn-premium {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      text-decoration: none;
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 17px 44px;
+      border-radius: 2px;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .btn-premium:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .premium-price-note {
+      margin-top: 16px;
+      font-size: 12px;
+      color: rgba(247, 244, 239, 0.35);
+      letter-spacing: 0.5px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #151F2B;
+      padding: 36px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-brand {
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(247, 244, 239, 0.3);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      color: rgba(247, 244, 239, 0.3);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ── HIDDEN STATE ── */
+    .template-card[data-hidden="true"] {
+      display: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .template-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      nav { padding: 0 24px; }
+      .gallery-section { padding: 40px 24px 60px; }
+      .filter-bar { padding: 0 24px; overflow-x: auto; }
+    }
+
+    @media (max-width: 600px) {
+      .template-grid { grid-template-columns: 1fr; gap: 16px; }
+      .hero { padding: 56px 24px 64px; }
+      .hero-badges { gap: 14px; }
+      .premium-section { padding: 60px 24px; }
+      .premium-features { flex-direction: column; gap: 12px; }
+      nav { padding: 0 20px; }
+      .nav-name { display: none; }
+      footer { flex-direction: column; align-items: center; text-align: center; }
+      .gallery-section { padding: 32px 20px 48px; }
+      .filter-bar { padding: 0 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-brand">
+      <div class="nav-monogram">OP</div>
+      <span class="nav-name">Ordered Pages Co</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/templates.html" class="active">Templates</a></li>
+      <li><a href="https://www.etsy.com/au/shop/OrderedPagesCo" target="_blank" rel="noopener">Etsy Shop</a></li>
+      <li><a href="https://orderedpagesco.gumroad.com" target="_blank" rel="noopener" class="cta-link">Get Bundle</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">Free Templates</div>
+    <h1>30 Free <em>reMarkable</em><br>Templates, Ready to Use</h1>
+    <p class="hero-sub">Budget trackers, daily planners, wellness journals. Download any template instantly. No account required, no strings attached.</p>
+    <div class="hero-badges">
+      <span class="badge">
+        <span class="badge-icon">
+          <svg viewBox="0 0 10 10" aria-hidden="true"><polyline points="1,5 4,8 9,2" stroke="#B8895A" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Instant download
+      </span>
+      <span class="badge">
+        <span class="badge-icon">
+          <svg viewBox="0 0 10 10" aria-hidden="true"><polyline points="1,5 4,8 9,2" stroke="#B8895A" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        No sign-up needed
+      </span>
+      <span class="badge">
+        <span class="badge-icon">
+          <svg viewBox="0 0 10 10" aria-hidden="true"><polyline points="1,5 4,8 9,2" stroke="#B8895A" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        reMarkable, GoodNotes &amp; Notability
+      </span>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar" role="tablist" aria-label="Filter templates by category">
+    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
+      All <span class="filter-count">30</span>
+    </button>
+    <button class="filter-btn" data-filter="budget" role="tab" aria-selected="false">
+      Budget &amp; Finance <span class="filter-count">10</span>
+    </button>
+    <button class="filter-btn" data-filter="planner" role="tab" aria-selected="false">
+      Planner <span class="filter-count">10</span>
+    </button>
+    <button class="filter-btn" data-filter="wellness" role="tab" aria-selected="false">
+      Wellness <span class="filter-count">10</span>
+    </button>
+  </div>
+
+  <!-- GALLERY -->
+  <section class="gallery-section">
+    <div class="gallery-header">
+      <h2 class="gallery-title" id="gallery-title">All Templates</h2>
+      <span class="gallery-count" id="gallery-count">Showing all 30 templates</span>
+    </div>
+    <div class="template-grid" id="template-grid">
+
+      <!-- Budget & Finance (10) -->
+      <div class="template-card" data-category="budget">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-budget-weekly-001.png"
+               alt="Weekly Budget Tracker template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge budget">Budget &amp; Finance</span>
+          <h3 class="card-name">Weekly Budget Tracker</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="budget">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-budget-monthly-002.png"
+               alt="Monthly Budget Overview template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge budget">Budget &amp; Finance</span>
+          <h3 class="card-name">Monthly Budget Overview</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="budget">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-budget-bills-003.png"
+               alt="Bill Payment Tracker template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge budget">Budget &amp; Finance</span>
+          <h3 class="card-name">Bill Payment Tracker</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="budget">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-budget-savings-004.png"
+               alt="Savings Goal Tracker template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge budget">Budget &amp; Finance</span>
+          <h3 class="card-name">Savings Goal Tracker</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="budget">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-budget-expenses-005.png"
+               alt="Daily Expense Log template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge budget">Budget &amp; Finance</span>
+          <h3 class="card-name">Daily Expense Log</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="budget">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-budget-debt-006.png"
+               alt="Debt Payoff Tracker template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge budget">Budget &amp; Finance</span>
+          <h3 class="card-name">Debt Payoff Tracker</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="budget">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-budget-income-007.png"
+               alt="Income and Expense Summary template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge budget">Budget &amp; Finance</span>
+          <h3 class="card-name">Income &amp; Expense Summary</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="budget">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-budget-grocery-008.png"
+               alt="Grocery Budget Planner template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge budget">Budget &amp; Finance</span>
+          <h3 class="card-name">Grocery Budget Planner</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="budget">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-budget-subscription-009.png"
+               alt="Subscription Tracker template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge budget">Budget &amp; Finance</span>
+          <h3 class="card-name">Subscription Tracker</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="budget">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-budget-annual-010.png"
+               alt="Annual Budget Planner template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge budget">Budget &amp; Finance</span>
+          <h3 class="card-name">Annual Budget Planner</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <!-- Planner (10) -->
+      <div class="template-card" data-category="planner">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-plan-daily-011.png"
+               alt="Daily Planner template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge planner">Planner</span>
+          <h3 class="card-name">Daily Planner</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="planner">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-plan-weekly-012.png"
+               alt="Weekly Planner template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge planner">Planner</span>
+          <h3 class="card-name">Weekly Planner</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="planner">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-plan-monthly-013.png"
+               alt="Monthly Planner template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge planner">Planner</span>
+          <h3 class="card-name">Monthly Planner</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="planner">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-plan-goals-014.png"
+               alt="Goal Setting Worksheet template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge planner">Planner</span>
+          <h3 class="card-name">Goal Setting Worksheet</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="planner">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-plan-project-015.png"
+               alt="Project Planner template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge planner">Planner</span>
+          <h3 class="card-name">Project Planner</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="planner">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-plan-meeting-016.png"
+               alt="Meeting Notes template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge planner">Planner</span>
+          <h3 class="card-name">Meeting Notes</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="planner">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-plan-brain-017.png"
+               alt="Brain Dump and Mind Map template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge planner">Planner</span>
+          <h3 class="card-name">Brain Dump &amp; Mind Map</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="planner">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-plan-reading-018.png"
+               alt="Reading Log template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge planner">Planner</span>
+          <h3 class="card-name">Reading Log</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="planner">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-plan-habit-019.png"
+               alt="Habit Tracker template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge planner">Planner</span>
+          <h3 class="card-name">Habit Tracker</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="planner">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-plan-journal-020.png"
+               alt="Guided Journal template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge planner">Planner</span>
+          <h3 class="card-name">Guided Journal</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <!-- Wellness (10) -->
+      <div class="template-card" data-category="wellness">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-well-mood-021.png"
+               alt="Mood Tracker template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge wellness">Wellness</span>
+          <h3 class="card-name">Mood Tracker</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="wellness">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-well-sleep-022.png"
+               alt="Sleep Tracker template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge wellness">Wellness</span>
+          <h3 class="card-name">Sleep Tracker</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="wellness">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-well-water-023.png"
+               alt="Water and Nutrition Log template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge wellness">Wellness</span>
+          <h3 class="card-name">Water &amp; Nutrition Log</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="wellness">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-well-workout-024.png"
+               alt="Workout Planner template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge wellness">Wellness</span>
+          <h3 class="card-name">Workout Planner</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="wellness">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-well-meal-025.png"
+               alt="Meal Planner template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge wellness">Wellness</span>
+          <h3 class="card-name">Meal Planner</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="wellness">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-well-gratitude-026.png"
+               alt="Gratitude Journal template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge wellness">Wellness</span>
+          <h3 class="card-name">Gratitude Journal</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="wellness">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-well-symptom-027.png"
+               alt="Symptom Tracker template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge wellness">Wellness</span>
+          <h3 class="card-name">Symptom Tracker</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="wellness">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-well-mindful-028.png"
+               alt="Mindfulness Log template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge wellness">Wellness</span>
+          <h3 class="card-name">Mindfulness Log</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="wellness">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-well-selfcare-029.png"
+               alt="Self-Care Checklist template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge wellness">Wellness</span>
+          <h3 class="card-name">Self-Care Checklist</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <div class="template-card" data-category="wellness">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-well-progress-030.png"
+               alt="Progress and Reflection template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge wellness">Wellness</span>
+          <h3 class="card-name">Progress &amp; Reflection</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+    </div><!-- /template-grid -->
+  </section>
+
+  <!-- PREMIUM BUNDLE CTA -->
+  <section class="premium-section">
+    <div class="premium-rule"></div>
+    <p class="premium-eyebrow">Premium Bundle</p>
+    <h2>All 30 Templates<br><em>Plus Every Future Release</em></h2>
+    <p class="premium-sub">One download. Every template we make, now and in the future. Organised, print-ready, and yours forever.</p>
+    <div class="premium-features">
+      <span class="pf-item"><span class="pf-dot"></span>30 templates included</span>
+      <span class="pf-item"><span class="pf-dot"></span>All future releases free</span>
+      <span class="pf-item"><span class="pf-dot"></span>reMarkable, GoodNotes &amp; Notability</span>
+      <span class="pf-item"><span class="pf-dot"></span>Instant download</span>
+    </div>
+    <a href="https://orderedpagesco.gumroad.com" class="btn-premium" target="_blank" rel="noopener">Get the Bundle &mdash; $14.99</a>
+    <p class="premium-price-note">One-time payment. Yours to keep.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-brand">Ordered Pages Co &copy; 2025</span>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/templates.html">Templates</a></li>
+      <li><a href="https://www.etsy.com/au/shop/OrderedPagesCo" target="_blank" rel="noopener">Etsy Shop</a></li>
+      <li><a href="/privacy.html">Privacy Policy</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    // Image load/error handlers — progressive reveal using CSS class only
+    document.querySelectorAll('.card-image img').forEach(function(img) {
+      var placeholder = img.previousElementSibling;
+
+      function onLoad() {
+        img.classList.add('loaded');
+        if (placeholder) { placeholder.classList.add('hidden'); }
+      }
+
+      function onError() {
+        // Image unavailable — keep placeholder, hide broken img element
+        img.style.display = 'none';
+      }
+
+      if (img.complete && img.naturalWidth > 0) {
+        onLoad();
+      } else {
+        img.addEventListener('load', onLoad);
+        img.addEventListener('error', onError);
+      }
+    });
+
+    // Filter logic — all values are static strings, no dynamic HTML insertion
+    var filterBtns = document.querySelectorAll('.filter-btn');
+    var cards = document.querySelectorAll('.template-card');
+    var galleryTitle = document.getElementById('gallery-title');
+    var galleryCount = document.getElementById('gallery-count');
+
+    var titleMap = {
+      all: 'All Templates',
+      budget: 'Budget & Finance',
+      planner: 'Planner',
+      wellness: 'Wellness'
+    };
+
+    filterBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var filter = btn.getAttribute('data-filter');
+
+        filterBtns.forEach(function(b) {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        var visible = 0;
+        cards.forEach(function(card) {
+          var match = filter === 'all' || card.getAttribute('data-category') === filter;
+          card.setAttribute('data-hidden', match ? 'false' : 'true');
+          if (match) { visible++; }
+        });
+
+        // Use textContent only — no HTML injection
+        galleryTitle.textContent = titleMap[filter] || 'Templates';
+        galleryCount.textContent = filter === 'all'
+          ? 'Showing all 30 templates'
+          : 'Showing ' + visible + ' template' + (visible !== 1 ? 's' : '');
+      });
+    });
+  </script>
+
+</body>
+</html>

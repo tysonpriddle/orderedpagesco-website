@@ -3,83 +3,803 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ordered Pages Co — Printable Planners & Trackers</title>
+  <title>Ordered Pages Co — Digital Planner Templates for reMarkable, GoodNotes &amp; Notability</title>
+  <meta name="description" content="Download free and premium digital planner templates for reMarkable, GoodNotes, and Notability. Budget trackers, daily planners, wellness journals and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: #1D1A13;
-      color: #F7F4EF;
-      font-family: Georgia, serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 24px;
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cream: #F5F0E8;
+      --navy: #1E2D3D;
+      --gold: #B8895A;
+      --gold-light: rgba(184, 137, 90, 0.15);
+      --gold-border: rgba(184, 137, 90, 0.35);
+      --off-white: #F7F4EF;
+      --dark: #1D1A13;
+      --text-muted: rgba(30, 45, 61, 0.55);
+      --card-shadow: 0 2px 16px rgba(30, 45, 61, 0.08);
+      --card-shadow-hover: 0 8px 32px rgba(30, 45, 61, 0.14);
     }
-    .monogram {
-      width: 80px;
-      height: 80px;
-      border: 1px solid rgba(184,137,90,0.5);
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--off-white);
+      color: var(--navy);
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--dark);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-monogram {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--gold-border);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 28px;
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      letter-spacing: 1px;
+      color: var(--off-white);
+    }
+
+    .nav-name {
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
       letter-spacing: 2px;
-      margin: 0 auto 32px;
-      color: #F7F4EF;
+      text-transform: uppercase;
+      color: var(--off-white);
     }
-    h1 {
-      font-size: clamp(28px, 5vw, 48px);
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(247, 244, 239, 0.65);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--gold); }
+
+    .nav-links .cta-link {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 8px 20px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links .cta-link:hover { opacity: 0.85; color: var(--navy); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--dark);
+      padding: 100px 40px 110px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(184, 137, 90, 0.1) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-monogram {
+      width: 72px;
+      height: 72px;
+      border: 1px solid rgba(184, 137, 90, 0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      letter-spacing: 2px;
+      margin: 0 auto 36px;
+      color: var(--off-white);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5.5vw, 64px);
       font-weight: 400;
-      letter-spacing: 4px;
+      color: var(--off-white);
+      line-height: 1.15;
+      letter-spacing: 3px;
       margin-bottom: 16px;
+      text-transform: uppercase;
     }
-    .rule {
+
+    .hero-rule {
       width: 60px;
       height: 1px;
-      background: #B8895A;
-      margin: 20px auto;
-      opacity: 0.6;
-    }
-    p {
-      font-family: Arial, sans-serif;
-      font-size: 15px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
+      background: var(--gold);
       opacity: 0.55;
-      margin-bottom: 40px;
+      margin: 20px auto;
     }
-    a.cta {
-      display: inline-block;
-      border: 1px solid rgba(184,137,90,0.6);
-      color: #B8895A;
-      text-decoration: none;
-      padding: 14px 36px;
-      font-family: Arial, sans-serif;
+
+    .hero-tagline {
+      font-family: 'Jost', sans-serif;
       font-size: 13px;
       letter-spacing: 3px;
       text-transform: uppercase;
+      color: rgba(247, 244, 239, 0.5);
+      margin-bottom: 48px;
     }
-    a.cta:hover { background: rgba(184,137,90,0.08); }
-    footer {
-      position: fixed;
-      bottom: 20px;
-      font-family: Arial, sans-serif;
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      text-decoration: none;
+      font-family: 'Jost', sans-serif;
       font-size: 12px;
-      opacity: 0.3;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 15px 36px;
+      border-radius: 2px;
+      transition: opacity 0.2s, transform 0.15s;
     }
-    footer a { color: #F7F4EF; }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid rgba(184, 137, 90, 0.55);
+      color: var(--gold);
+      text-decoration: none;
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 15px 36px;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: rgba(184, 137, 90, 0.08);
+    }
+
+    /* ── VALUE STRIP ── */
+    .value-strip {
+      background: var(--navy);
+      padding: 22px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .vs-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(247, 244, 239, 0.55);
+    }
+
+    .vs-dot {
+      width: 4px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── FEATURED TEMPLATES ── */
+    .featured-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 72px 40px 80px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .section-eyebrow::before,
+    .section-eyebrow::after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 3.5vw, 36px);
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.25;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 44px;
+    }
+
+    /* ── TEMPLATE CARD ── */
+    .template-card {
+      background: #fff;
+      border: 1px solid rgba(30, 45, 61, 0.07);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .template-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .card-image {
+      aspect-ratio: 4 / 3;
+      background: var(--cream);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .card-image img.loaded { opacity: 1; }
+
+    .card-image-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: var(--cream);
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+
+    .card-image-placeholder.hidden { opacity: 0; }
+
+    .placeholder-monogram {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--gold-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: var(--gold);
+    }
+
+    .placeholder-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .card-body {
+      padding: 20px 22px 12px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 10px;
+    }
+
+    .category-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 2px;
+    }
+
+    .category-badge.budget {
+      background: rgba(184, 137, 90, 0.12);
+      color: #8B6340;
+    }
+
+    .category-badge.planner {
+      background: rgba(30, 45, 61, 0.08);
+      color: var(--navy);
+    }
+
+    .category-badge.wellness {
+      background: rgba(80, 120, 90, 0.1);
+      color: #3D6B4A;
+    }
+
+    .card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.35;
+      color: var(--navy);
+    }
+
+    .card-compat {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .card-footer {
+      padding: 0 22px 22px;
+      margin-top: auto;
+    }
+
+    .btn-download {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--navy);
+      color: var(--off-white);
+      text-decoration: none;
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 13px 20px;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+
+    .btn-download:hover { background: #283D52; }
+
+    .featured-cta {
+      text-align: center;
+    }
+
+    .btn-view-all {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--navy);
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+
+    .btn-view-all:hover { color: var(--gold); }
+
+    .btn-view-all-arrow {
+      font-size: 16px;
+      transition: transform 0.2s;
+    }
+
+    .btn-view-all:hover .btn-view-all-arrow { transform: translateX(3px); }
+
+    /* ── CATEGORIES SECTION ── */
+    .categories-section {
+      background: var(--cream);
+      padding: 72px 40px;
+    }
+
+    .categories-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .category-card {
+      background: #fff;
+      border: 1px solid rgba(30, 45, 61, 0.07);
+      border-radius: 4px;
+      padding: 36px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: var(--card-shadow);
+    }
+
+    .category-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .cat-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 22px;
+    }
+
+    .cat-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .cat-count {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .cat-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── ETSY STRIP ── */
+    .etsy-strip {
+      background: var(--navy);
+      padding: 56px 40px;
+      text-align: center;
+    }
+
+    .etsy-strip p {
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(247, 244, 239, 0.45);
+      margin-bottom: 20px;
+    }
+
+    .etsy-strip h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 400;
+      color: var(--off-white);
+      margin-bottom: 28px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #151F2B;
+      padding: 36px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-brand {
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(247, 244, 239, 0.3);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      color: rgba(247, 244, 239, 0.3);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .featured-grid,
+      .categories-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .featured-section,
+      .categories-inner { padding-left: 24px; padding-right: 24px; }
+      .hero { padding: 72px 24px 80px; }
+      .value-strip { gap: 20px; padding: 20px 24px; }
+      .etsy-strip { padding: 48px 24px; }
+    }
+
+    @media (max-width: 600px) {
+      .featured-grid,
+      .categories-grid { grid-template-columns: 1fr; gap: 16px; }
+      nav { padding: 0 20px; }
+      .nav-name { display: none; }
+      .hero { padding: 56px 20px 64px; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .btn-primary, .btn-outline { width: 100%; max-width: 280px; text-align: center; }
+      .featured-section { padding: 48px 20px 56px; }
+      .categories-section { padding: 48px 20px; }
+      footer { flex-direction: column; align-items: center; text-align: center; }
+      .value-strip { flex-direction: column; gap: 12px; }
+    }
   </style>
 </head>
 <body>
-  <div class="monogram">OP</div>
-  <h1>Ordered Pages Co</h1>
-  <div class="rule"></div>
-  <p>Instant Download Printables</p>
-  <a class="cta" href="https://www.etsy.com/au/shop/OrderedPagesCo">Shop on Etsy</a>
-  <footer><a href="/privacy.html">Privacy Policy</a></footer>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-brand">
+      <div class="nav-monogram">OP</div>
+      <span class="nav-name">Ordered Pages Co</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/templates.html">Free Templates</a></li>
+      <li><a href="https://www.etsy.com/au/shop/OrderedPagesCo" target="_blank" rel="noopener">Etsy Shop</a></li>
+      <li><a href="https://orderedpagesco.gumroad.com" target="_blank" rel="noopener" class="cta-link">Get Bundle</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-monogram">OP</div>
+    <h1>Ordered Pages Co</h1>
+    <div class="hero-rule"></div>
+    <p class="hero-tagline">Digital Planner Templates for Paperless People</p>
+    <div class="hero-actions">
+      <a href="/templates.html" class="btn-primary">Browse 30 Free Templates</a>
+      <a href="https://www.etsy.com/au/shop/OrderedPagesCo" class="btn-outline" target="_blank" rel="noopener">Shop on Etsy</a>
+    </div>
+  </section>
+
+  <!-- VALUE STRIP -->
+  <div class="value-strip">
+    <span class="vs-item"><span class="vs-dot"></span>reMarkable Compatible</span>
+    <span class="vs-item"><span class="vs-dot"></span>GoodNotes &amp; Notability</span>
+    <span class="vs-item"><span class="vs-dot"></span>Instant Download</span>
+    <span class="vs-item"><span class="vs-dot"></span>No Sign-Up Required</span>
+  </div>
+
+  <!-- FEATURED TEMPLATES -->
+  <section class="featured-section">
+    <div class="section-header">
+      <div class="section-eyebrow">Featured</div>
+      <h2 class="section-title">Popular Free Templates</h2>
+    </div>
+
+    <div class="featured-grid">
+
+      <!-- Budget pick: Weekly Budget Tracker -->
+      <div class="template-card">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-budget-weekly-001.png"
+               alt="Weekly Budget Tracker template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge budget">Budget &amp; Finance</span>
+          <h3 class="card-name">Weekly Budget Tracker</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <!-- Planner pick: Daily Planner -->
+      <div class="template-card">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-plan-daily-011.png"
+               alt="Daily Planner template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge planner">Planner</span>
+          <h3 class="card-name">Daily Planner</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+      <!-- Wellness pick: Mood Tracker -->
+      <div class="template-card">
+        <div class="card-image">
+          <div class="card-image-placeholder">
+            <div class="placeholder-monogram">OP</div>
+            <span class="placeholder-label">Preview</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-well-mood-021.png"
+               alt="Mood Tracker template preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="category-badge wellness">Wellness</span>
+          <h3 class="card-name">Mood Tracker</h3>
+          <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="featured-cta">
+      <a href="/templates.html" class="btn-view-all">
+        View all 30 free templates
+        <span class="btn-view-all-arrow" aria-hidden="true">&#8594;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories-section">
+    <div class="categories-inner">
+      <div class="section-header">
+        <div class="section-eyebrow">Browse by Category</div>
+        <h2 class="section-title">Find the Right Template</h2>
+      </div>
+      <div class="categories-grid">
+        <a href="/templates.html#budget" class="category-card">
+          <div class="cat-icon" aria-hidden="true">&#128181;</div>
+          <h3 class="cat-title">Budget &amp; Finance</h3>
+          <p class="cat-count">10 templates</p>
+          <p class="cat-desc">Track spending, plan savings, manage bills, and take control of your finances with clarity.</p>
+        </a>
+        <a href="/templates.html#planner" class="category-card">
+          <div class="cat-icon" aria-hidden="true">&#128467;</div>
+          <h3 class="cat-title">Planner</h3>
+          <p class="cat-count">10 templates</p>
+          <p class="cat-desc">Daily pages, weekly overviews, goal sheets, meeting notes, and habit trackers for productive days.</p>
+        </a>
+        <a href="/templates.html#wellness" class="category-card">
+          <div class="cat-icon" aria-hidden="true">&#127807;</div>
+          <h3 class="cat-title">Wellness</h3>
+          <p class="cat-count">10 templates</p>
+          <p class="cat-desc">Mood logs, sleep tracking, meal planning, mindfulness prompts, and self-care checklists.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ETSY STRIP -->
+  <section class="etsy-strip">
+    <p>Also available on</p>
+    <h2>Shop our full collection on Etsy</h2>
+    <a href="https://www.etsy.com/au/shop/OrderedPagesCo" class="btn-outline" target="_blank" rel="noopener">Visit Etsy Shop</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-brand">Ordered Pages Co &copy; 2025</span>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/templates.html">Free Templates</a></li>
+      <li><a href="https://www.etsy.com/au/shop/OrderedPagesCo" target="_blank" rel="noopener">Etsy Shop</a></li>
+      <li><a href="/privacy.html">Privacy Policy</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    // Progressive image reveal
+    document.querySelectorAll('.card-image img').forEach(function(img) {
+      var placeholder = img.previousElementSibling;
+
+      function onLoad() {
+        img.classList.add('loaded');
+        if (placeholder) { placeholder.classList.add('hidden'); }
+      }
+
+      function onError() {
+        img.style.display = 'none';
+      }
+
+      if (img.complete && img.naturalWidth > 0) {
+        onLoad();
+      } else {
+        img.addEventListener('load', onLoad);
+        img.addEventListener('error', onError);
+      }
+    });
+  </script>
+
 </body>
 </html>
