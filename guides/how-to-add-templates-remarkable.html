@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Add Custom Templates to Your reMarkable — Ordered Pages Co</title>
+  <meta name="description" content="Step-by-step guide to importing PNG templates into reMarkable 2 and Paper Pro using the desktop app, USB, or SSH. Works with any custom template file.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --cream: #F5F0E8; --navy: #1E2D3D; --gold: #B8895A; --gold-light: rgba(184,137,90,0.15); --gold-border: rgba(184,137,90,0.35); --off-white: #F7F4EF; --dark: #1D1A13; --text-muted: rgba(30,45,61,0.6); }
+    body { background: var(--off-white); color: var(--navy); font-family: 'Jost', sans-serif; line-height: 1.7; }
+    nav { background: var(--dark); padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+    .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-monogram { width: 36px; height: 36px; border: 1px solid var(--gold-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 13px; letter-spacing: 1px; color: var(--off-white); }
+    .nav-name { font-size: 15px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--off-white); }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { color: rgba(247,244,239,0.65); text-decoration: none; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-links .cta-link { background: var(--gold); color: var(--navy); padding: 8px 20px; font-weight: 600; }
+    .article-hero { background: var(--dark); padding: 72px 40px; text-align: center; }
+    .article-category { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .article-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(24px, 3.5vw, 40px); font-weight: 400; color: var(--off-white); line-height: 1.25; max-width: 700px; margin: 0 auto 16px; }
+    .article-meta { font-size: 12px; color: rgba(247,244,239,0.35); letter-spacing: 1px; }
+    .article-body { max-width: 720px; margin: 0 auto; padding: 64px 40px 80px; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--navy); margin: 44px 0 16px; }
+    h3 { font-family: 'Jost', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; color: var(--navy); margin: 28px 0 10px; }
+    p { font-size: 15px; color: var(--text-muted); margin-bottom: 18px; }
+    ol, ul { padding-left: 24px; margin-bottom: 18px; }
+    li { font-size: 15px; color: var(--text-muted); margin-bottom: 8px; line-height: 1.7; }
+    .callout { background: var(--gold-light); border-left: 3px solid var(--gold); padding: 16px 20px; border-radius: 0 4px 4px 0; margin: 28px 0; }
+    .callout p { margin: 0; font-size: 14px; }
+    code { background: rgba(30,45,61,0.06); padding: 2px 6px; border-radius: 3px; font-family: 'Courier New', monospace; font-size: 13px; color: var(--navy); }
+    .divider { width: 48px; height: 1px; background: var(--gold); opacity: 0.4; margin: 48px 0; }
+    .related { background: var(--cream); border-radius: 4px; padding: 32px; margin-top: 56px; }
+    .related h3 { margin-top: 0; margin-bottom: 16px; font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; }
+    .related a { display: block; font-size: 14px; color: var(--gold); text-decoration: none; margin-bottom: 10px; }
+    .related a:hover { text-decoration: underline; }
+    .cta-inline { display: inline-block; background: var(--navy); color: var(--off-white); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 13px 28px; border-radius: 2px; margin-top: 8px; }
+    footer { background: #151F2B; padding: 36px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-brand { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(247,244,239,0.3); }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 12px; color: rgba(247,244,239,0.3); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+    @media (max-width: 600px) { nav { padding: 0 20px; } .nav-name { display: none; } .article-body { padding: 40px 20px; } footer { flex-direction: column; align-items: center; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-brand">
+      <div class="nav-monogram">OP</div>
+      <span class="nav-name">Ordered Pages Co</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/templates.html">Free Templates</a></li>
+      <li><a href="/guides/" class="active">Guides</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.etsy.com/au/shop/OrderedPagesCo" target="_blank" rel="noopener">Etsy Shop</a></li>
+      <li><a href="https://orderedpages.gumroad.com" target="_blank" rel="noopener" class="cta-link">Free Download</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-hero">
+    <p class="article-category">Getting Started</p>
+    <h1>How to Add Custom Templates to Your reMarkable</h1>
+    <p class="article-meta">Updated March 2026 &nbsp;&middot;&nbsp; 5 min read</p>
+  </div>
+
+  <div class="article-body">
+
+    <p>Adding a custom PNG template to your reMarkable takes under two minutes once you know the steps. There are three methods: the official desktop app, USB transfer, and SSH. This guide covers all three, starting with the easiest.</p>
+
+    <div class="callout">
+      <p>This guide works for reMarkable 2 and reMarkable Paper Pro. The desktop app method is the recommended approach for most users — no technical knowledge required.</p>
+    </div>
+
+    <h2>Method 1: reMarkable Desktop App (Recommended)</h2>
+    <p>This is the official method supported by reMarkable. It requires the free desktop app installed on your Mac or Windows computer.</p>
+
+    <ol>
+      <li>Download your PNG template from our <a href="/templates.html" style="color:var(--gold);">free templates page</a>. Save it somewhere easy to find — your Desktop or Downloads folder works fine.</li>
+      <li>Open the reMarkable desktop app and make sure your device is connected via USB or on the same Wi-Fi network.</li>
+      <li>In the desktop app, click the <strong>three-dot menu</strong> next to your profile name in the top left.</li>
+      <li>Select <strong>My templates</strong> from the dropdown menu.</li>
+      <li>Click <strong>Add template</strong> and browse to your downloaded PNG file. Give it a name (e.g. "Weekly Budget") and choose an icon.</li>
+      <li>Click <strong>Save</strong>. The template will sync to your device within seconds.</li>
+    </ol>
+
+    <p>On your reMarkable, open a new notebook. When prompted to choose a template, scroll to the bottom of the list — your custom template will appear under <strong>My templates</strong>.</p>
+
+    <div class="divider"></div>
+
+    <h2>Method 2: USB Transfer (Advanced)</h2>
+    <p>If you prefer direct file access or the desktop app method is not working, you can transfer templates via USB using your operating system's file manager.</p>
+
+    <h3>Windows</h3>
+    <ol>
+      <li>Connect your reMarkable via USB. It will appear as a drive in File Explorer.</li>
+      <li>Navigate to <code>.local/share/remarkable/templates/</code> on the device.</li>
+      <li>Copy your PNG file into that folder. The filename becomes the template name, so name it clearly: <code>Weekly Budget.png</code></li>
+      <li>You also need to add a matching entry to <code>templates.json</code> in the same folder. Open the file, copy an existing entry, and change the <code>filename</code>, <code>name</code>, and <code>iconCode</code> values to match your new template.</li>
+      <li>Safely eject the device and restart it. Your template will appear in the template picker.</li>
+    </ol>
+
+    <h3>Mac</h3>
+    <p>The same process applies on Mac, but your reMarkable may not appear automatically in Finder. You may need to use <strong>Android File Transfer</strong> or a similar utility to access the device filesystem.</p>
+
+    <div class="callout">
+      <p>Editing <code>templates.json</code> incorrectly can cause the template picker to fail. Make a backup copy of the file before editing. If something goes wrong, restoring the original file will fix it.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2>Method 3: SSH Transfer (Power Users)</h2>
+    <p>If you have SSH enabled on your reMarkable (via Developer Mode in Settings), you can transfer templates directly over Wi-Fi without any cables.</p>
+
+    <ol>
+      <li>Enable Developer Mode in <strong>Settings &rarr; Security</strong> on your device. Note the SSH password shown on screen.</li>
+      <li>Find your device's IP address in <strong>Settings &rarr; Wi-Fi</strong>.</li>
+      <li>Open a terminal on your computer and run:<br><code>scp ~/Downloads/your-template.png root@[DEVICE-IP]:/usr/share/remarkable/templates/</code></li>
+      <li>Enter the SSH password when prompted.</li>
+      <li>Update <code>templates.json</code> on the device the same way as the USB method, then restart the device.</li>
+    </ol>
+
+    <div class="divider"></div>
+
+    <h2>Troubleshooting</h2>
+
+    <h3>Template not appearing after sync</h3>
+    <p>Close and reopen the reMarkable desktop app, then trigger a manual sync. On the device, a hard restart (hold power button for 3 seconds) usually resolves display issues after template import.</p>
+
+    <h3>Template appears blurry or wrong size</h3>
+    <p>Our templates are exported at 1404×1872px — the native reMarkable 2 resolution. If another template source is causing blurriness, check that the PNG is not being resized on import. The reMarkable app should import PNGs at their native resolution without scaling.</p>
+
+    <h3>Template picker shows no custom templates</h3>
+    <p>On older firmware versions, custom templates only appear if the <code>templates.json</code> entry is correctly formatted. Verify the JSON is valid (no trailing commas, matching brackets) using a free online JSON validator.</p>
+
+    <div style="text-align:center;margin-top:56px;padding:40px;background:var(--navy);border-radius:4px;">
+      <p style="font-family:'Playfair Display',serif;font-size:20px;color:var(--off-white);margin-bottom:8px;">Ready to download your templates?</p>
+      <p style="font-size:13px;color:rgba(247,244,239,0.5);margin-bottom:24px;">30 free templates, no account required.</p>
+      <a href="/templates.html" class="cta-inline">Browse free templates</a>
+    </div>
+
+    <div class="related">
+      <h3>Related Guides</h3>
+      <a href="/guides/digital-budgeting-remarkable.html">Digital Budgeting on reMarkable: A Complete Guide &rarr;</a>
+      <a href="/guides/digital-planning-2026.html">reMarkable vs GoodNotes vs Notability in 2026 &rarr;</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <span class="footer-brand">Ordered Pages Co &copy; 2026</span>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/templates.html">Free Templates</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/privacy.html">Privacy Policy</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Budgeting on reMarkable: A Complete Guide — Ordered Pages Co</title>
+  <meta name="description" content="Why handwriting your budget beats spreadsheets, which budget templates to use for each scenario, and how to build a consistent tracking habit on your reMarkable.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --cream: #F5F0E8; --navy: #1E2D3D; --gold: #B8895A; --gold-light: rgba(184,137,90,0.15); --gold-border: rgba(184,137,90,0.35); --off-white: #F7F4EF; --dark: #1D1A13; --text-muted: rgba(30,45,61,0.6); }
+    body { background: var(--off-white); color: var(--navy); font-family: 'Jost', sans-serif; line-height: 1.7; }
+    nav { background: var(--dark); padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+    .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-monogram { width: 36px; height: 36px; border: 1px solid var(--gold-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 13px; letter-spacing: 1px; color: var(--off-white); }
+    .nav-name { font-size: 15px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--off-white); }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { color: rgba(247,244,239,0.65); text-decoration: none; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-links .cta-link { background: var(--gold); color: var(--navy); padding: 8px 20px; font-weight: 600; }
+    .article-hero { background: var(--dark); padding: 72px 40px; text-align: center; }
+    .article-category { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .article-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(24px, 3.5vw, 40px); font-weight: 400; color: var(--off-white); line-height: 1.25; max-width: 700px; margin: 0 auto 16px; }
+    .article-meta { font-size: 12px; color: rgba(247,244,239,0.35); letter-spacing: 1px; }
+    .article-body { max-width: 720px; margin: 0 auto; padding: 64px 40px 80px; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--navy); margin: 44px 0 16px; }
+    h3 { font-family: 'Jost', sans-serif; font-size: 15px; font-weight: 600; color: var(--navy); margin: 28px 0 10px; }
+    p { font-size: 15px; color: var(--text-muted); margin-bottom: 18px; }
+    ol, ul { padding-left: 24px; margin-bottom: 18px; }
+    li { font-size: 15px; color: var(--text-muted); margin-bottom: 8px; line-height: 1.7; }
+    .callout { background: var(--gold-light); border-left: 3px solid var(--gold); padding: 16px 20px; border-radius: 0 4px 4px 0; margin: 28px 0; }
+    .callout p { margin: 0; font-size: 14px; }
+    .divider { width: 48px; height: 1px; background: var(--gold); opacity: 0.4; margin: 48px 0; }
+    .template-row { display: flex; align-items: flex-start; gap: 20px; padding: 20px 0; border-bottom: 1px solid rgba(30,45,61,0.08); }
+    .template-label { background: var(--gold-light); border: 1px solid var(--gold-border); border-radius: 3px; padding: 4px 12px; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #8B6340; white-space: nowrap; flex-shrink: 0; margin-top: 3px; }
+    .template-info h4 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 400; color: var(--navy); margin-bottom: 6px; }
+    .template-info p { font-size: 13px; color: var(--text-muted); margin: 0; }
+    .related { background: var(--cream); border-radius: 4px; padding: 32px; margin-top: 56px; }
+    .related h3 { margin-top: 0; margin-bottom: 16px; font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; }
+    .related a { display: block; font-size: 14px; color: var(--gold); text-decoration: none; margin-bottom: 10px; }
+    .cta-inline { display: inline-block; background: var(--navy); color: var(--off-white); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 13px 28px; border-radius: 2px; margin-top: 8px; }
+    footer { background: #151F2B; padding: 36px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-brand { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(247,244,239,0.3); }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 12px; color: rgba(247,244,239,0.3); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+    @media (max-width: 600px) { nav { padding: 0 20px; } .nav-name { display: none; } .article-body { padding: 40px 20px; } footer { flex-direction: column; align-items: center; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-brand">
+      <div class="nav-monogram">OP</div>
+      <span class="nav-name">Ordered Pages Co</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/templates.html">Free Templates</a></li>
+      <li><a href="/guides/" class="active">Guides</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.etsy.com/au/shop/OrderedPagesCo" target="_blank" rel="noopener">Etsy Shop</a></li>
+      <li><a href="https://orderedpages.gumroad.com" target="_blank" rel="noopener" class="cta-link">Free Download</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-hero">
+    <p class="article-category">Budgeting</p>
+    <h1>Digital Budgeting on reMarkable: A Complete Guide</h1>
+    <p class="article-meta">Updated March 2026 &nbsp;&middot;&nbsp; 7 min read</p>
+  </div>
+
+  <div class="article-body">
+
+    <p>Spreadsheets are excellent tools for automating calculations. They are poor tools for building awareness. If you have ever wondered where your money went despite maintaining a detailed budget spreadsheet, the format itself may be the problem.</p>
+
+    <p>Handwriting your budget — even on a digital device — forces a different kind of engagement. You notice numbers differently when you write them. The friction is the point.</p>
+
+    <h2>Why Handwriting a Budget Works</h2>
+
+    <p>Research on note-taking consistently shows that writing by hand promotes better retention and comprehension than typing the same information. The same principle applies to financial tracking. When you manually write down that you spent $340 on dining out this week, it is harder to dismiss than a cell in column F row 23.</p>
+
+    <p>The reMarkable is particularly well suited to this because of the paper-like display. There is no notification badge, no app switching, no colour distracting you. Just your numbers and your handwriting.</p>
+
+    <div class="callout">
+      <p>You do not need to abandon digital tools entirely. A common pattern is to use handwritten tracking on reMarkable for daily/weekly awareness, and a spreadsheet for the month-end reconciliation and longer-term projections.</p>
+    </div>
+
+    <h2>Choosing the Right Template for Your Situation</h2>
+
+    <p>Our budget collection includes ten templates, each designed for a specific use case. Here is a practical guide to which one fits your situation.</p>
+
+    <div style="margin: 32px 0;">
+      <div class="template-row">
+        <span class="template-label">Most popular</span>
+        <div class="template-info">
+          <h4>Weekly Budget Tracker</h4>
+          <p>Best for: people who get paid weekly or want to track spending at a granular level. Seven daily columns, expense categories, and a running total. The most effective entry point for building a tracking habit.</p>
+        </div>
+      </div>
+      <div class="template-row">
+        <span class="template-label">Bills</span>
+        <div class="template-info">
+          <h4>Bills Tracker</h4>
+          <p>Best for: tracking recurring fixed costs (rent, utilities, subscriptions, insurance). Rows for due date, amount, and paid status. Nothing else. The simplicity is intentional.</p>
+        </div>
+      </div>
+      <div class="template-row">
+        <span class="template-label">Debt</span>
+        <div class="template-info">
+          <h4>Debt Payoff Plan</h4>
+          <p>Best for: anyone with multiple debts wanting to apply avalanche or snowball method. Tracks balance, interest rate, minimum payment, and remaining months per debt in one view.</p>
+        </div>
+      </div>
+      <div class="template-row">
+        <span class="template-label">Savings</span>
+        <div class="template-info">
+          <h4>Savings Planner</h4>
+          <p>Best for: goal-based saving. Separate sections for each savings goal, with target amount, deadline, and monthly contribution required. Works well alongside the monthly budget.</p>
+        </div>
+      </div>
+      <div class="template-row" style="border-bottom: none;">
+        <span class="template-label">Annual</span>
+        <div class="template-info">
+          <h4>Annual Planner</h4>
+          <p>Best for: the big picture. Twelve months of income, fixed costs, variable costs, and savings across a single spread. Best used alongside the weekly or monthly template, not instead of them.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2>Building a Consistent Habit</h2>
+
+    <p>The template is only useful if you open it regularly. Here is a system that works for most people without requiring excessive discipline.</p>
+
+    <h3>The five-minute Sunday ritual</h3>
+    <p>Every Sunday evening, open the Weekly Budget template for the coming week. Write in your expected income for the week and any known fixed expenses (bills due, scheduled transfers). That is all. Leave the daily tracking fields blank and fill them in as the week progresses.</p>
+
+    <h3>Daily capture: two transactions maximum</h3>
+    <p>Do not try to log every transaction in real time. At the end of each day, check your banking app and write down the two or three most significant transactions from the day. The minor ones (coffee, parking) can be estimated or grouped. The habit of opening the template daily matters more than perfect accuracy in the early weeks.</p>
+
+    <h3>Monthly review: thirty minutes, no more</h3>
+    <p>At month end, use the Monthly Budget template to tally your actuals. Compare to your plan. Identify one thing that went better than expected and one thing to adjust. That is a complete monthly review — you do not need a three-hour retrospective to make meaningful progress.</p>
+
+    <div class="callout">
+      <p>The goal is not perfect tracking. It is consistent awareness. A habit you maintain imperfectly for twelve months will outperform a perfect system you abandoned in February.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2>Setting Up Your reMarkable for Budget Tracking</h2>
+
+    <p>Once you have imported your chosen template (see our <a href="/guides/how-to-add-templates-remarkable.html" style="color:var(--gold);">setup guide</a>), create a dedicated notebook for budget tracking. Name it clearly — "2026 Budget" works fine — and pin it to your home screen so it is always one tap away.</p>
+
+    <p>Open a new notebook page using the template for each week or month. Keep past weeks in the same notebook rather than creating new ones. Over time, you build an effortless record of your financial history without any additional filing system.</p>
+
+    <p>reMarkable's search function cannot read handwriting at this level of detail, so if you need to reference past figures you will be scrolling back through pages. This is intentional — the purpose of the handwritten record is not to replace a spreadsheet database, but to build present-moment awareness. The spreadsheet handles history. The reMarkable handles now.</p>
+
+    <div style="text-align:center;margin-top:56px;padding:40px;background:var(--navy);border-radius:4px;">
+      <p style="font-family:'Playfair Display',serif;font-size:20px;color:var(--off-white);margin-bottom:8px;">Download all 10 budget templates free</p>
+      <p style="font-size:13px;color:rgba(247,244,239,0.5);margin-bottom:24px;">No account needed. Instant download.</p>
+      <a href="/templates.html#budget" class="cta-inline">Get budget templates</a>
+    </div>
+
+    <div class="related">
+      <h3>Related Guides</h3>
+      <a href="/guides/how-to-add-templates-remarkable.html">How to Add Custom Templates to Your reMarkable &rarr;</a>
+      <a href="/guides/digital-planning-2026.html">reMarkable vs GoodNotes vs Notability in 2026 &rarr;</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <span class="footer-brand">Ordered Pages Co &copy; 2026</span>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/templates.html">Free Templates</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/privacy.html">Privacy Policy</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

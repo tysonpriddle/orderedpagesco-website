@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guides — Ordered Pages Co</title>
+  <meta name="description" content="Step-by-step guides for using digital planner templates on reMarkable, GoodNotes, and Notability. Setup, budgeting tips, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --cream: #F5F0E8; --navy: #1E2D3D; --gold: #B8895A;
+      --gold-light: rgba(184,137,90,0.15); --gold-border: rgba(184,137,90,0.35);
+      --off-white: #F7F4EF; --dark: #1D1A13; --text-muted: rgba(30,45,61,0.55);
+    }
+    body { background: var(--off-white); color: var(--navy); font-family: 'Jost', sans-serif; line-height: 1.6; }
+    nav { background: var(--dark); padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+    .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-monogram { width: 36px; height: 36px; border: 1px solid var(--gold-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 13px; letter-spacing: 1px; color: var(--off-white); }
+    .nav-name { font-size: 15px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--off-white); }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { color: rgba(247,244,239,0.65); text-decoration: none; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-links .cta-link { background: var(--gold); color: var(--navy); padding: 8px 20px; font-weight: 600; }
+    .page-hero { background: var(--dark); padding: 80px 40px; text-align: center; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 48px); font-weight: 400; color: var(--off-white); letter-spacing: 2px; margin-bottom: 12px; }
+    .page-hero p { font-size: 13px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(247,244,239,0.45); }
+    .guides-grid { max-width: 1100px; margin: 0 auto; padding: 72px 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .guide-card { background: #fff; border: 1px solid rgba(30,45,61,0.07); border-radius: 4px; padding: 32px; text-decoration: none; display: block; box-shadow: 0 2px 16px rgba(30,45,61,0.06); transition: transform 0.2s, box-shadow 0.2s; }
+    .guide-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(30,45,61,0.12); }
+    .guide-category { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: block; }
+    .guide-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; color: var(--navy); margin-bottom: 12px; line-height: 1.4; }
+    .guide-excerpt { font-size: 13px; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px; }
+    .guide-link { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--gold); }
+    footer { background: #151F2B; padding: 36px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-brand { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(247,244,239,0.3); }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 12px; color: rgba(247,244,239,0.3); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+    @media (max-width: 900px) { .guides-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { nav { padding: 0 20px; } .nav-name { display: none; } .guides-grid { grid-template-columns: 1fr; padding: 40px 20px; } footer { flex-direction: column; align-items: center; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-brand">
+      <div class="nav-monogram">OP</div>
+      <span class="nav-name">Ordered Pages Co</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/templates.html">Free Templates</a></li>
+      <li><a href="/guides/" class="active">Guides</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.etsy.com/au/shop/OrderedPagesCo" target="_blank" rel="noopener">Etsy Shop</a></li>
+      <li><a href="https://orderedpages.gumroad.com" target="_blank" rel="noopener" class="cta-link">Free Download</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <h1>Guides</h1>
+    <p>Setup tutorials, tips, and comparisons for digital planners</p>
+  </div>
+
+  <div class="guides-grid">
+
+    <a href="/guides/how-to-add-templates-remarkable.html" class="guide-card">
+      <span class="guide-category">Getting Started</span>
+      <h2 class="guide-title">How to Add Custom Templates to Your reMarkable</h2>
+      <p class="guide-excerpt">A complete walkthrough for importing PNG templates using the reMarkable desktop app, the USB method, and the SSH method. Covers reMarkable 2 and Paper Pro.</p>
+      <span class="guide-link">Read guide &rarr;</span>
+    </a>
+
+    <a href="/guides/digital-budgeting-remarkable.html" class="guide-card">
+      <span class="guide-category">Budgeting</span>
+      <h2 class="guide-title">Digital Budgeting on reMarkable: A Complete Guide</h2>
+      <p class="guide-excerpt">Why handwriting your budget works better than spreadsheets, which budget templates to use for your situation, and how to build a consistent tracking habit.</p>
+      <span class="guide-link">Read guide &rarr;</span>
+    </a>
+
+    <a href="/guides/digital-planning-2026.html" class="guide-card">
+      <span class="guide-category">Comparison</span>
+      <h2 class="guide-title">reMarkable vs GoodNotes vs Notability in 2026</h2>
+      <p class="guide-excerpt">Which platform is best for digital planning with custom templates? We compare import workflows, template support, usability, and long-term value.</p>
+      <span class="guide-link">Read guide &rarr;</span>
+    </a>
+
+  </div>
+
+  <footer>
+    <span class="footer-brand">Ordered Pages Co &copy; 2026</span>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/templates.html">Free Templates</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/privacy.html">Privacy Policy</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Ordered Pages Co</title>
+  <meta name="description" content="Ordered Pages Co makes free minimal digital planner templates for reMarkable, GoodNotes, and Notability. No sign-up, no fluff, just clean pages.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --cream: #F5F0E8; --navy: #1E2D3D; --gold: #B8895A;
+      --gold-light: rgba(184,137,90,0.15); --gold-border: rgba(184,137,90,0.35);
+      --off-white: #F7F4EF; --dark: #1D1A13; --text-muted: rgba(30,45,61,0.55);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--off-white); color: var(--navy); font-family: 'Jost', sans-serif; font-weight: 400; line-height: 1.6; }
+    nav { background: var(--dark); padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+    .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-monogram { width: 36px; height: 36px; border: 1px solid var(--gold-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 13px; letter-spacing: 1px; color: var(--off-white); }
+    .nav-name { font-family: 'Jost', sans-serif; font-weight: 500; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; color: var(--off-white); }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { color: rgba(247,244,239,0.65); text-decoration: none; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-links .cta-link { background: var(--gold); color: var(--navy); padding: 8px 20px; font-weight: 600; }
+    footer { background: #151F2B; padding: 36px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-brand { font-family: 'Jost', sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(247,244,239,0.3); }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 12px; color: rgba(247,244,239,0.3); text-decoration: none; letter-spacing: 0.5px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+    .page-hero { background: var(--dark); padding: 80px 40px; text-align: center; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(184,137,90,0.08) 0%, transparent 65%); pointer-events: none; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 48px); font-weight: 400; color: var(--off-white); letter-spacing: 2px; margin-bottom: 12px; }
+    .page-hero p { font-size: 13px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(247,244,239,0.45); }
+    .content { max-width: 760px; margin: 0 auto; padding: 72px 40px; }
+    .section-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .section-eyebrow::before, .section-eyebrow::after { content: ''; display: block; width: 20px; height: 1px; background: var(--gold); opacity: 0.5; }
+    h2 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 3vw, 30px); font-weight: 400; color: var(--navy); margin-bottom: 20px; }
+    p { font-size: 15px; color: rgba(30,45,61,0.75); line-height: 1.8; margin-bottom: 18px; }
+    .divider { width: 60px; height: 1px; background: var(--gold); opacity: 0.4; margin: 48px 0; }
+    .values-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 32px; }
+    .value-item { background: #fff; border: 1px solid rgba(30,45,61,0.07); border-radius: 4px; padding: 28px; }
+    .value-title { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--navy); margin-bottom: 8px; }
+    .value-body { font-size: 13px; color: var(--text-muted); line-height: 1.7; margin: 0; }
+    .cta-block { background: var(--navy); border-radius: 4px; padding: 44px 40px; text-align: center; margin-top: 56px; }
+    .cta-block h3 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 400; color: var(--off-white); margin-bottom: 12px; }
+    .cta-block p { font-size: 14px; color: rgba(247,244,239,0.55); margin-bottom: 24px; }
+    .btn-gold { display: inline-block; background: var(--gold); color: var(--navy); text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 14px 32px; border-radius: 2px; }
+    @media (max-width: 700px) {
+      nav { padding: 0 20px; } .nav-name { display: none; }
+      .content { padding: 48px 20px; } .values-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-brand">
+      <div class="nav-monogram">OP</div>
+      <span class="nav-name">Ordered Pages Co</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/templates.html">Free Templates</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li><a href="/about.html" class="active">About</a></li>
+      <li><a href="https://www.etsy.com/au/shop/OrderedPagesCo" target="_blank" rel="noopener">Etsy Shop</a></li>
+      <li><a href="https://orderedpages.gumroad.com" target="_blank" rel="noopener" class="cta-link">Free Download</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <h1>About Ordered Pages Co</h1>
+    <p>Minimal templates for paperless people</p>
+  </div>
+
+  <div class="content">
+
+    <div class="section-eyebrow">Our Story</div>
+    <h2>Why We Exist</h2>
+    <p>Ordered Pages Co started with a simple frustration: the best digital paper devices in the world — reMarkable, Supernote, BOOX — come with very few useful templates out of the box. The templates that exist are either buried in forums, locked behind paywalls, or designed for A4 printers rather than e-ink screens.</p>
+    <p>We set out to fix that. Every template we make is designed specifically for the pixel dimensions and contrast requirements of e-ink displays. They are clean, minimal, and functional — no decorative clutter, no wasted space.</p>
+    <p>All 30 templates are free. No email list, no account, no upsell. Just download and use.</p>
+
+    <div class="divider"></div>
+
+    <div class="section-eyebrow">Our Approach</div>
+    <h2>Design Philosophy</h2>
+    <p>We design for the device first. That means understanding how e-ink renders grey tones, where the finger or stylus naturally rests on screen, and how much whitespace actually helps when you are writing by hand rather than typing.</p>
+    <p>Templates are exported at 1404×1872px — native reMarkable 2 resolution. They scale correctly to Paper Pro, Supernote A5X, and BOOX devices. When used in GoodNotes or Notability on iPad, they appear at full quality on an A4-sized canvas.</p>
+
+    <div class="values-grid">
+      <div class="value-item">
+        <p class="value-title">Free by default</p>
+        <p class="value-body">All core templates are free and always will be. We believe useful tools should be accessible, not gated.</p>
+      </div>
+      <div class="value-item">
+        <p class="value-title">No tracking</p>
+        <p class="value-body">We do not run ads or tracking pixels. Download links go straight to the file. No analytics on your behaviour.</p>
+      </div>
+      <div class="value-item">
+        <p class="value-title">Device-first design</p>
+        <p class="value-body">Every dimension, line weight, and grey value is tested on actual hardware before release.</p>
+      </div>
+      <div class="value-item">
+        <p class="value-title">Honest copy</p>
+        <p class="value-body">We will tell you what each template is genuinely useful for and what it is not. No marketing fluff.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-eyebrow">The Collection</div>
+    <h2>What We Make</h2>
+    <p>Thirty templates across three categories: Budget &amp; Finance, Planners, and Wellness. Each category contains ten standalone templates that work on their own without needing the others.</p>
+    <p>The budget templates cover everything from weekly spending to annual planning, debt payoff, and subscription tracking. The planner templates include daily and weekly pages, meeting notes, goal worksheets, and habit trackers. The wellness templates span mood, sleep, nutrition, mindfulness, and self-care.</p>
+    <p>We plan to expand to 60+ templates over 2026. Upcoming categories include study and focus, project management, and travel planning.</p>
+
+    <div class="cta-block">
+      <h3>Browse the free collection</h3>
+      <p>30 templates, instant download, no sign-up required.</p>
+      <a href="/templates.html" class="btn-gold">View all templates</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <span class="footer-brand">Ordered Pages Co &copy; 2026</span>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/templates.html">Free Templates</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.etsy.com/au/shop/OrderedPagesCo" target="_blank" rel="noopener">Etsy Shop</a></li>
+      <li><a href="/privacy.html">Privacy Policy</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

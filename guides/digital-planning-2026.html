@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reMarkable vs GoodNotes vs Notability in 2026 — Ordered Pages Co</title>
+  <meta name="description" content="Which app is best for digital planning with custom templates in 2026? We compare reMarkable, GoodNotes, and Notability on import workflow, usability, and long-term value.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --cream: #F5F0E8; --navy: #1E2D3D; --gold: #B8895A; --gold-light: rgba(184,137,90,0.15); --gold-border: rgba(184,137,90,0.35); --off-white: #F7F4EF; --dark: #1D1A13; --text-muted: rgba(30,45,61,0.6); }
+    body { background: var(--off-white); color: var(--navy); font-family: 'Jost', sans-serif; line-height: 1.7; }
+    nav { background: var(--dark); padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+    .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-monogram { width: 36px; height: 36px; border: 1px solid var(--gold-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 13px; letter-spacing: 1px; color: var(--off-white); }
+    .nav-name { font-size: 15px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--off-white); }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { color: rgba(247,244,239,0.65); text-decoration: none; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-links .cta-link { background: var(--gold); color: var(--navy); padding: 8px 20px; font-weight: 600; }
+    .article-hero { background: var(--dark); padding: 72px 40px; text-align: center; }
+    .article-category { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .article-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(24px, 3.5vw, 40px); font-weight: 400; color: var(--off-white); line-height: 1.25; max-width: 700px; margin: 0 auto 16px; }
+    .article-meta { font-size: 12px; color: rgba(247,244,239,0.35); letter-spacing: 1px; }
+    .article-body { max-width: 720px; margin: 0 auto; padding: 64px 40px 80px; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--navy); margin: 44px 0 16px; }
+    h3 { font-family: 'Jost', sans-serif; font-size: 15px; font-weight: 600; color: var(--navy); margin: 28px 0 10px; }
+    p { font-size: 15px; color: var(--text-muted); margin-bottom: 18px; }
+    ul { padding-left: 24px; margin-bottom: 18px; }
+    li { font-size: 15px; color: var(--text-muted); margin-bottom: 8px; line-height: 1.7; }
+    .callout { background: var(--gold-light); border-left: 3px solid var(--gold); padding: 16px 20px; border-radius: 0 4px 4px 0; margin: 28px 0; }
+    .callout p { margin: 0; font-size: 14px; }
+    .divider { width: 48px; height: 1px; background: var(--gold); opacity: 0.4; margin: 48px 0; }
+    .compare-table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 14px; }
+    .compare-table th { background: var(--navy); color: var(--off-white); padding: 12px 16px; text-align: left; font-weight: 500; letter-spacing: 0.5px; }
+    .compare-table td { padding: 12px 16px; border-bottom: 1px solid rgba(30,45,61,0.08); color: var(--text-muted); }
+    .compare-table tr:nth-child(even) td { background: rgba(30,45,61,0.02); }
+    .compare-table .good { color: #3D6B4A; font-weight: 500; }
+    .compare-table .ok { color: #8B6340; font-weight: 500; }
+    .compare-table .poor { color: #8B3D3D; font-weight: 500; }
+    .verdict { background: #fff; border: 1px solid rgba(30,45,61,0.08); border-radius: 4px; padding: 28px 32px; margin: 28px 0; }
+    .verdict-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .verdict h3 { margin-top: 0; font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; margin-bottom: 10px; }
+    .verdict p { margin: 0; font-size: 14px; }
+    .related { background: var(--cream); border-radius: 4px; padding: 32px; margin-top: 56px; }
+    .related h3 { margin-top: 0; margin-bottom: 16px; font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; }
+    .related a { display: block; font-size: 14px; color: var(--gold); text-decoration: none; margin-bottom: 10px; }
+    .cta-inline { display: inline-block; background: var(--navy); color: var(--off-white); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 13px 28px; border-radius: 2px; margin-top: 8px; }
+    footer { background: #151F2B; padding: 36px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-brand { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(247,244,239,0.3); }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 12px; color: rgba(247,244,239,0.3); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+    @media (max-width: 600px) { nav { padding: 0 20px; } .nav-name { display: none; } .article-body { padding: 40px 20px; } .compare-table { font-size: 12px; } footer { flex-direction: column; align-items: center; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-brand">
+      <div class="nav-monogram">OP</div>
+      <span class="nav-name">Ordered Pages Co</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/templates.html">Free Templates</a></li>
+      <li><a href="/guides/" class="active">Guides</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.etsy.com/au/shop/OrderedPagesCo" target="_blank" rel="noopener">Etsy Shop</a></li>
+      <li><a href="https://orderedpages.gumroad.com" target="_blank" rel="noopener" class="cta-link">Free Download</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-hero">
+    <p class="article-category">Comparison</p>
+    <h1>reMarkable vs GoodNotes vs Notability in 2026</h1>
+    <p class="article-meta">Updated March 2026 &nbsp;&middot;&nbsp; 8 min read</p>
+  </div>
+
+  <div class="article-body">
+
+    <p>All three platforms support custom PNG templates. The differences that matter for planners are in how smoothly the import works, how the templates behave in practice, and what you give up by choosing one platform over another.</p>
+
+    <p>This guide focuses specifically on template-based planning. We are not comparing every feature — just the ones that affect whether your downloaded planner templates will work well day-to-day.</p>
+
+    <div class="callout">
+      <p>All templates from Ordered Pages Co are designed at 1404×1872px. They work on all three platforms without modification. This guide compares the platforms themselves, not the templates.</p>
+    </div>
+
+    <h2>Quick Comparison</h2>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>reMarkable</th>
+          <th>GoodNotes</th>
+          <th>Notability</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Template import method</td>
+          <td>Desktop app or SSH</td>
+          <td>In-app (iOS/Mac)</td>
+          <td>In-app (iOS/Mac)</td>
+        </tr>
+        <tr>
+          <td>Template import difficulty</td>
+          <td class="ok">Moderate</td>
+          <td class="good">Easy</td>
+          <td class="good">Easy</td>
+        </tr>
+        <tr>
+          <td>Writing feel</td>
+          <td class="good">Excellent (e-ink)</td>
+          <td class="ok">Good (iPad)</td>
+          <td class="ok">Good (iPad)</td>
+        </tr>
+        <tr>
+          <td>Distraction level</td>
+          <td class="good">Very low</td>
+          <td class="ok">Moderate</td>
+          <td class="ok">Moderate</td>
+        </tr>
+        <tr>
+          <td>Template rendering quality</td>
+          <td class="good">Native resolution</td>
+          <td class="good">Excellent</td>
+          <td class="good">Excellent</td>
+        </tr>
+        <tr>
+          <td>Device cost</td>
+          <td class="poor">High ($500–$700)</td>
+          <td class="good">iPad you may own</td>
+          <td class="good">iPad you may own</td>
+        </tr>
+        <tr>
+          <td>App cost</td>
+          <td class="good">Included</td>
+          <td class="ok">$14.99 AUD/year</td>
+          <td class="good">Free (limited) / $19.99</td>
+        </tr>
+        <tr>
+          <td>Cloud sync</td>
+          <td class="good">Included</td>
+          <td class="good">iCloud</td>
+          <td class="good">iCloud</td>
+        </tr>
+        <tr>
+          <td>Works without internet</td>
+          <td class="good">Yes</td>
+          <td class="good">Yes</td>
+          <td class="good">Yes</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="divider"></div>
+
+    <h2>reMarkable</h2>
+
+    <p>reMarkable's e-ink display is the main reason people choose it for planning. The screen does not glow, does not show notifications, and has a friction that feels closer to writing on paper than any other digital surface. For people who have tried and failed to build a planning habit on iPad, reMarkable often succeeds where others did not.</p>
+
+    <h3>Template import on reMarkable</h3>
+    <p>The import process is more involved than GoodNotes or Notability. You need the desktop app installed on a computer, and adding a template to the template picker requires going through the app's interface rather than just importing a file. Our <a href="/guides/how-to-add-templates-remarkable.html" style="color:var(--gold);">setup guide</a> covers this in full.</p>
+    <p>Once imported, templates work exactly as expected. Open a new notebook, choose your template, and start writing. The template persists across pages if you want a repeated layout.</p>
+
+    <h3>Who reMarkable suits</h3>
+    <ul>
+      <li>People who struggle with focus on an iPad (social media, notifications, apps)</li>
+      <li>Writers and heavy note-takers who want the best possible writing feel</li>
+      <li>Anyone willing to invest in a dedicated device and live with its limitations</li>
+    </ul>
+
+    <h3>reMarkable's limitations for planning</h3>
+    <p>No colour. No photos. Limited export options. The template system requires a desktop computer to manage. And at $500–700 AUD, it is a significant purchase if you are not already committed to a paperless workflow.</p>
+
+    <div class="divider"></div>
+
+    <h2>GoodNotes</h2>
+
+    <p>GoodNotes is the most popular digital notebook app on iPad. It has excellent template support, a clean import flow, and a large community sharing free templates. For most people who already own an iPad, GoodNotes is the path of least resistance.</p>
+
+    <h3>Template import on GoodNotes</h3>
+    <p>In GoodNotes 6, go to <strong>Settings &rarr; Templates</strong> and tap the + button. Select your PNG from Files or Photos. Name it, assign it to a category, and it is immediately available when creating new pages. The whole process takes about 30 seconds.</p>
+
+    <h3>Who GoodNotes suits</h3>
+    <ul>
+      <li>iPad owners who already have the device and do not want to buy dedicated hardware</li>
+      <li>People who want colour in their planning (highlighting, coloured ink)</li>
+      <li>Students who need to annotate PDFs alongside planning pages</li>
+    </ul>
+
+    <h3>GoodNotes limitations for planning</h3>
+    <p>The iPad is not a distraction-free device. Notifications, the urge to check apps, and the brightness of the screen all work against deep focus planning sessions. You can use Focus mode and Do Not Disturb to mitigate this, but it requires active management.</p>
+
+    <div class="divider"></div>
+
+    <h2>Notability</h2>
+
+    <p>Notability is strong for note-taking, particularly for its audio recording feature that syncs playback with handwriting. For pure planning, it is slightly weaker than GoodNotes — the template system is less refined, and the page management tools are less flexible. However, it is a genuinely good app and the free tier covers most planning use cases.</p>
+
+    <h3>Template import on Notability</h3>
+    <p>Tap the + button to create a new note, then tap the three-dot menu and select <strong>Edit Note Details</strong>. From there, you can apply a custom template by importing a PNG from your Files app. It is workable but slightly less intuitive than GoodNotes.</p>
+
+    <h3>Who Notability suits</h3>
+    <ul>
+      <li>Students who record lectures and want notes to sync with audio</li>
+      <li>Anyone who prefers Notability's specific feel and does not want to switch</li>
+      <li>Free tier users who want basic planning without a subscription</li>
+    </ul>
+
+    <div class="divider"></div>
+
+    <h2>Our Recommendations</h2>
+
+    <div class="verdict">
+      <p class="verdict-label">Best for focus and writing feel</p>
+      <h3>reMarkable 2 or Paper Pro</h3>
+      <p>If you are buying a device specifically for planning and want to eliminate digital distraction, reMarkable is worth the cost. The writing experience is genuinely different from an iPad and for many people that difference is what makes the habit stick.</p>
+    </div>
+
+    <div class="verdict">
+      <p class="verdict-label">Best value if you own an iPad</p>
+      <h3>GoodNotes 6</h3>
+      <p>The easiest template import, the largest template community, and the most flexible page management. If you already own an iPad and want to start planning digitally today, start here.</p>
+    </div>
+
+    <div class="verdict">
+      <p class="verdict-label">Best free option</p>
+      <h3>Notability (free tier)</h3>
+      <p>If cost is the deciding factor, Notability's free tier covers basic planning with custom templates. It lacks some of GoodNotes' polish but works well enough to build a habit before committing to a paid app or device.</p>
+    </div>
+
+    <div style="text-align:center;margin-top:56px;padding:40px;background:var(--navy);border-radius:4px;">
+      <p style="font-family:'Playfair Display',serif;font-size:20px;color:var(--off-white);margin-bottom:8px;">Templates that work on all three platforms</p>
+      <p style="font-size:13px;color:rgba(247,244,239,0.5);margin-bottom:24px;">30 free templates. Download and use today.</p>
+      <a href="/templates.html" class="cta-inline">Browse free templates</a>
+    </div>
+
+    <div class="related">
+      <h3>Related Guides</h3>
+      <a href="/guides/how-to-add-templates-remarkable.html">How to Add Custom Templates to Your reMarkable &rarr;</a>
+      <a href="/guides/digital-budgeting-remarkable.html">Digital Budgeting on reMarkable: A Complete Guide &rarr;</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <span class="footer-brand">Ordered Pages Co &copy; 2026</span>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/templates.html">Free Templates</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/privacy.html">Privacy Policy</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
