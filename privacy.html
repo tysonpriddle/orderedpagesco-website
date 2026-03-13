@@ -4,71 +4,162 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — Ordered Pages Co</title>
+  <meta name="description" content="Privacy policy for orderedpagesco.com — what information we collect, how we use it, and your rights.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Privacy Policy — Ordered Pages Co">
+  <meta property="og:url" content="https://orderedpagesco.com/privacy.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ordered Pages Co">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Georgia, serif;
-      max-width: 760px;
-      margin: 60px auto;
-      padding: 0 24px 80px;
-      color: #2a2a2a;
-      line-height: 1.8;
-      font-size: 16px;
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --cream: #F5F0E8; --navy: #1E2D3D; --gold: #B8895A;
+      --gold-light: rgba(184,137,90,0.15); --gold-border: rgba(184,137,90,0.35);
+      --off-white: #F7F4EF; --dark: #1D1A13; --text-muted: rgba(30,45,61,0.65);
     }
-    h1 { font-size: 28px; margin-bottom: 6px; }
-    h2 { font-size: 18px; margin-top: 40px; margin-bottom: 8px; }
-    p, li { margin-bottom: 12px; }
-    a { color: #B8895A; }
-    .updated { color: #888; font-size: 14px; margin-bottom: 40px; }
-    header { border-bottom: 1px solid #ddd; padding-bottom: 24px; margin-bottom: 36px; }
-    .brand { font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: #888; margin-bottom: 12px; }
+    body { background: var(--off-white); color: var(--navy); font-family: 'Jost', sans-serif; line-height: 1.7; }
+    nav { background: var(--dark); padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+    .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-monogram { width: 36px; height: 36px; border: 1px solid var(--gold-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 13px; letter-spacing: 1px; color: var(--off-white); }
+    .nav-name { font-size: 15px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--off-white); }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { color: rgba(247,244,239,0.65); text-decoration: none; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links .cta-link { background: var(--gold); color: var(--navy); padding: 8px 20px; font-weight: 600; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; flex-shrink: 0; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: rgba(247,244,239,0.8); border-radius: 2px; transition: transform 0.22s, opacity 0.22s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .page-hero { background: var(--dark); padding: 64px 40px; text-align: center; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(24px, 3.5vw, 40px); font-weight: 400; color: var(--off-white); letter-spacing: 2px; margin-bottom: 10px; }
+    .page-hero .updated { font-size: 12px; color: rgba(247,244,239,0.45); letter-spacing: 1px; }
+    .content { max-width: 760px; margin: 0 auto; padding: 64px 40px 80px; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; color: var(--navy); margin: 40px 0 12px; }
+    p { font-size: 15px; color: var(--text-muted); margin-bottom: 16px; }
+    ul { padding-left: 22px; margin-bottom: 16px; }
+    li { font-size: 15px; color: var(--text-muted); margin-bottom: 8px; line-height: 1.7; }
+    a { color: var(--gold); }
+    footer { background: #151F2B; padding: 36px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-brand { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(247,244,239,0.55); }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 12px; color: rgba(247,244,239,0.55); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-hamburger { display: flex; }
+      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: var(--dark); flex-direction: column; padding: 16px 24px 24px; gap: 0; border-top: 1px solid rgba(184,137,90,0.2); z-index: 99; }
+      .nav-links.open { display: flex; }
+      .nav-links li { border-bottom: 1px solid rgba(247,244,239,0.06); }
+      .nav-links a { display: block; padding: 13px 0; font-size: 14px; }
+      .nav-links .cta-link { margin-top: 12px; text-align: center; display: block; padding: 12px 20px; }
+      .nav-name { display: none; }
+      .content { padding: 40px 20px; }
+    }
+    @media (max-width: 600px) { footer { flex-direction: column; align-items: center; } }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="brand">Ordered Pages Co</div>
+  <nav>
+    <a href="/" class="nav-brand">
+      <div class="nav-monogram">OP</div>
+      <span class="nav-name">Ordered Pages Co</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/templates.html">Free Templates</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.etsy.com/au/shop/OrderedPagesCo" target="_blank" rel="noopener">Etsy Shop</a></li>
+      <li><a href="https://orderedpages.gumroad.com" target="_blank" rel="noopener" class="cta-link">Free Download</a></li>
+    </ul>
+    <button class="nav-hamburger" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="page-hero">
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: March 2025</p>
-  </header>
+    <p class="updated">Last updated: March 2026</p>
+  </div>
 
-  <p>Ordered Pages Co ("we", "us", "our") operates the website orderedpagesco.com and sells digital printable products via Etsy and other platforms. This Privacy Policy explains what information we collect, how we use it, and your rights in relation to it.</p>
+  <div class="content">
 
-  <h2>1. Information We Collect</h2>
-  <p>We collect minimal information necessary to operate our business:</p>
-  <ul>
-    <li><strong>Purchase information:</strong> When you buy a product through Etsy, Etsy collects your name, email, and payment details on our behalf. We do not receive your payment details directly. We may receive your name and email address to fulfil your order.</li>
-    <li><strong>Communications:</strong> If you contact us by email, we retain the content of that correspondence.</li>
-    <li><strong>Website analytics:</strong> We may collect anonymised visitor data (page views, referral source) via standard analytics tools. No personally identifying information is stored.</li>
-  </ul>
+    <p>Ordered Pages Co ("we", "us", "our") operates the website orderedpagesco.com and sells digital products via Etsy, Gumroad, and other platforms. This Privacy Policy explains what information we collect, how we use it, and your rights in relation to it.</p>
 
-  <h2>2. How We Use Your Information</h2>
-  <ul>
-    <li>To fulfil digital product orders and deliver download links.</li>
-    <li>To respond to customer enquiries.</li>
-    <li>To improve our products and shop experience.</li>
-    <li>To comply with legal obligations.</li>
-  </ul>
-  <p>We do not use your information for advertising, do not sell it to third parties, and do not share it with anyone except where required to fulfil your order (e.g. Etsy's platform).</p>
+    <h2>1. Information We Collect</h2>
+    <p>We collect minimal information necessary to operate our business:</p>
+    <ul>
+      <li><strong>Purchase information:</strong> When you buy a product through Etsy or Gumroad, those platforms collect your name, email, and payment details on our behalf. We do not receive your payment details directly. We may receive your name and email address to fulfil your order.</li>
+      <li><strong>Communications:</strong> If you contact us by email, we retain the content of that correspondence.</li>
+      <li><strong>Website analytics:</strong> We may collect anonymised visitor data (page views, referral source) via standard analytics tools. No personally identifying information is stored.</li>
+    </ul>
 
-  <h2>3. Third-Party Platforms</h2>
-  <p>Our products are sold via Etsy. Etsy has its own privacy policy which governs the data they collect. We also use Pinterest to share content publicly. Pinterest's privacy policy applies to interactions on their platform.</p>
-  <p>Our automation tools (used internally to publish content) access only our own business accounts on these platforms and do not collect or process any customer data.</p>
+    <h2>2. How We Use Your Information</h2>
+    <ul>
+      <li>To fulfil digital product orders and deliver download links.</li>
+      <li>To respond to customer enquiries.</li>
+      <li>To improve our products and shop experience.</li>
+      <li>To comply with legal obligations.</li>
+    </ul>
+    <p>We do not use your information for advertising, do not sell it to third parties, and do not share it with anyone except where required to fulfil your order.</p>
 
-  <h2>4. Data Retention</h2>
-  <p>We retain purchase-related information only as long as necessary for customer support and legal compliance. Email correspondence is retained for up to 2 years.</p>
+    <h2>3. Third-Party Platforms</h2>
+    <p>Our products are sold via Etsy and Gumroad. Each platform has its own privacy policy which governs the data they collect. We also use Pinterest to share content publicly — Pinterest's privacy policy applies to interactions on their platform.</p>
+    <p>Our automation tools (used internally to publish content) access only our own business accounts on these platforms and do not collect or process any customer data.</p>
 
-  <h2>5. Your Rights</h2>
-  <p>You have the right to request access to, correction of, or deletion of any personal information we hold about you. To make a request, contact us at the address below.</p>
+    <h2>4. Data Retention</h2>
+    <p>We retain purchase-related information only as long as necessary for customer support and legal compliance. Email correspondence is retained for up to 2 years.</p>
 
-  <h2>6. Cookies</h2>
-  <p>This website may use essential cookies for basic functionality. We do not use advertising or tracking cookies.</p>
+    <h2>5. Your Rights</h2>
+    <p>You have the right to request access to, correction of, or deletion of any personal information we hold about you. To make a request, contact us at the address below.</p>
 
-  <h2>7. Contact</h2>
-  <p>For any privacy-related questions or requests, contact us at:<br>
-  <a href="mailto:orderedpagesco@gmail.com">orderedpagesco@gmail.com</a></p>
+    <h2>6. Cookies</h2>
+    <p>This website may use essential cookies for basic functionality. We do not use advertising or tracking cookies.</p>
 
-  <h2>8. Changes to This Policy</h2>
-  <p>We may update this policy from time to time. The current version will always be published at this URL with the date of last update shown at the top.</p>
+    <h2>7. Contact</h2>
+    <p>For any privacy-related questions or requests, contact us at:<br>
+    <a href="mailto:orderedpagesco@gmail.com">orderedpagesco@gmail.com</a></p>
+
+    <h2>8. Changes to This Policy</h2>
+    <p>We may update this policy from time to time. The current version will always be published at this URL with the date of last update shown above.</p>
+
+  </div>
+
+  <footer>
+    <span class="footer-brand">Ordered Pages Co &copy; 2026</span>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/templates.html">Free Templates</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.etsy.com/au/shop/OrderedPagesCo" target="_blank" rel="noopener">Etsy Shop</a></li>
+      <li><a href="/privacy.html">Privacy Policy</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    (function() {
+      var toggle = document.getElementById('navToggle');
+      var links = document.querySelector('.nav-links');
+      if (!toggle || !links) return;
+      toggle.addEventListener('click', function() {
+        var open = links.classList.toggle('open');
+        toggle.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+      document.addEventListener('click', function(e) {
+        if (!toggle.contains(e.target) && !links.contains(e.target)) {
+          links.classList.remove('open');
+          toggle.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>

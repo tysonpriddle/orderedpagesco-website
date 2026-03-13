@@ -3,8 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ordered Pages Co — Digital Planner Templates for reMarkable, GoodNotes &amp; Notability</title>
-  <meta name="description" content="Download free and premium digital planner templates for reMarkable, GoodNotes, and Notability. Budget trackers, daily planners, wellness journals and more.">
+  <title>30 Free reMarkable Templates — Budget, Planner &amp; Wellness | Ordered Pages Co</title>
+  <meta name="description" content="Download 30 free digital planner templates for reMarkable, GoodNotes, and Notability. Budget trackers, daily planners, wellness journals. No sign-up, instant download.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="30 Free reMarkable Templates — Ordered Pages Co">
+  <meta property="og:description" content="30 free digital planner templates for reMarkable, GoodNotes &amp; Notability. Budget, planning, wellness. No sign-up required.">
+  <meta property="og:url" content="https://orderedpagesco.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ordered Pages Co">
+  <meta property="og:image" content="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-plan-daily-011.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -163,7 +170,7 @@
       font-size: 13px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: rgba(247, 244, 239, 0.5);
+      color: rgba(247, 244, 239, 0.75);
       margin-bottom: 48px;
     }
 
@@ -232,7 +239,7 @@
       font-size: 12px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: rgba(247, 244, 239, 0.55);
+      color: rgba(247, 244, 239, 0.75);
     }
 
     .vs-dot {
@@ -569,7 +576,7 @@
       font-size: 12px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: rgba(247, 244, 239, 0.3);
+      color: rgba(247, 244, 239, 0.55);
     }
 
     .footer-links {
@@ -580,13 +587,60 @@
 
     .footer-links a {
       font-size: 12px;
-      color: rgba(247, 244, 239, 0.3);
+      color: rgba(247, 244, 239, 0.55);
       text-decoration: none;
       letter-spacing: 0.5px;
       transition: color 0.2s;
     }
 
     .footer-links a:hover { color: var(--gold); }
+
+    /* ── HAMBURGER ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      flex-shrink: 0;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: rgba(247,244,239,0.8);
+      border-radius: 2px;
+      transition: transform 0.22s, opacity 0.22s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── GUIDE TEASER CARDS ── */
+    .guide-teaser-card {
+      background: #fff;
+      border: 1px solid rgba(30,45,61,0.07);
+      border-radius: 4px;
+      padding: 28px;
+      text-decoration: none;
+      display: block;
+      box-shadow: 0 2px 16px rgba(30,45,61,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .guide-teaser-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(30,45,61,0.12);
+    }
+
+    /* ── HOW IT WORKS GRID ── */
+    .how-it-works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 48px;
+    }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
@@ -598,13 +652,35 @@
       .hero { padding: 72px 24px 80px; }
       .value-strip { gap: 20px; padding: 20px 24px; }
       .etsy-strip { padding: 48px 24px; }
+      .how-it-works-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-hamburger { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: var(--dark);
+        flex-direction: column;
+        padding: 16px 24px 24px;
+        gap: 0;
+        border-top: 1px solid rgba(184,137,90,0.2);
+        z-index: 99;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { border-bottom: 1px solid rgba(247,244,239,0.06); }
+      .nav-links a { display: block; padding: 13px 0; font-size: 14px; letter-spacing: 1px; }
+      .nav-links .cta-link { margin-top: 12px; text-align: center; display: block; padding: 12px 20px; }
+      .nav-name { display: none; }
     }
 
     @media (max-width: 600px) {
       .featured-grid,
       .categories-grid { grid-template-columns: 1fr; gap: 16px; }
-      nav { padding: 0 20px; }
-      .nav-name { display: none; }
       .hero { padding: 56px 20px 64px; }
       .hero-actions { flex-direction: column; align-items: center; }
       .btn-primary, .btn-outline { width: 100%; max-width: 280px; text-align: center; }
@@ -624,24 +700,26 @@
       <span class="nav-name">Ordered Pages Co</span>
     </a>
     <ul class="nav-links">
-      <li><a href="/" class="active">Home</a></li>
       <li><a href="/templates.html">Free Templates</a></li>
       <li><a href="/guides/">Guides</a></li>
       <li><a href="/about.html">About</a></li>
       <li><a href="https://www.etsy.com/au/shop/OrderedPagesCo" target="_blank" rel="noopener">Etsy Shop</a></li>
       <li><a href="https://orderedpages.gumroad.com" target="_blank" rel="noopener" class="cta-link">Free Download</a></li>
     </ul>
+    <button class="nav-hamburger" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-monogram">OP</div>
-    <h1>Ordered Pages Co</h1>
+    <h1>30 Free Templates for Your reMarkable</h1>
     <div class="hero-rule"></div>
-    <p class="hero-tagline">Digital Planner Templates for Paperless People</p>
+    <p class="hero-tagline">Budget &middot; Planner &middot; Wellness &mdash; No sign-up, instant download</p>
     <div class="hero-actions">
-      <a href="/templates.html" class="btn-primary">Browse 30 Free Templates</a>
-      <a href="https://www.etsy.com/au/shop/OrderedPagesCo" class="btn-outline" target="_blank" rel="noopener">Shop on Etsy</a>
+      <a href="/templates.html" class="btn-primary">Browse All 30 Templates</a>
+      <a href="https://orderedpages.gumroad.com" class="btn-outline" target="_blank" rel="noopener">Download Free on Gumroad</a>
     </div>
   </section>
 
@@ -678,7 +756,7 @@
           <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
         </div>
         <div class="card-footer">
-          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+          <a href="https://orderedpages.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
         </div>
       </div>
 
@@ -698,7 +776,7 @@
           <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
         </div>
         <div class="card-footer">
-          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+          <a href="https://orderedpages.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
         </div>
       </div>
 
@@ -718,7 +796,7 @@
           <p class="card-compat">reMarkable &middot; GoodNotes &middot; Notability</p>
         </div>
         <div class="card-footer">
-          <a href="https://orderedpagesco.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
+          <a href="https://orderedpages.gumroad.com" class="btn-download" target="_blank" rel="noopener">Download Free</a>
         </div>
       </div>
 
@@ -739,7 +817,7 @@
         <div class="section-eyebrow">Simple Process</div>
         <h2 class="section-title">How It Works</h2>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:48px;">
+      <div class="how-it-works-grid">
         <div style="text-align:center;padding:0 16px;">
           <div style="width:56px;height:56px;border-radius:50%;background:var(--gold-light);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);">1</div>
           <h3 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:400;color:var(--navy);margin-bottom:10px;">Browse &amp; Choose</h3>
@@ -798,19 +876,19 @@
         <h2 class="section-title">Guides &amp; Tips</h2>
       </div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;">
-        <a href="/guides/how-to-add-templates-remarkable.html" style="background:#fff;border:1px solid rgba(30,45,61,0.07);border-radius:4px;padding:28px;text-decoration:none;display:block;box-shadow:0 2px 16px rgba(30,45,61,0.06);transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 28px rgba(30,45,61,0.12)'" onmouseout="this.style.transform='';this.style.boxShadow='0 2px 16px rgba(30,45,61,0.06)'">
+        <a href="/guides/how-to-add-templates-remarkable.html" class="guide-teaser-card">
           <p style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">Getting Started</p>
           <h3 style="font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:var(--navy);margin-bottom:10px;line-height:1.4;">How to Add Custom Templates to Your reMarkable</h3>
           <p style="font-size:13px;color:var(--text-muted);line-height:1.6;">A clear step-by-step walkthrough for importing PNG templates via the reMarkable desktop app or USB.</p>
           <p style="font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-top:16px;">Read guide &rarr;</p>
         </a>
-        <a href="/guides/digital-budgeting-remarkable.html" style="background:#fff;border:1px solid rgba(30,45,61,0.07);border-radius:4px;padding:28px;text-decoration:none;display:block;box-shadow:0 2px 16px rgba(30,45,61,0.06);transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 28px rgba(30,45,61,0.12)'" onmouseout="this.style.transform='';this.style.boxShadow='0 2px 16px rgba(30,45,61,0.06)'">
+        <a href="/guides/digital-budgeting-remarkable.html" class="guide-teaser-card">
           <p style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">Budgeting</p>
           <h3 style="font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:var(--navy);margin-bottom:10px;line-height:1.4;">Digital Budgeting on reMarkable: A Complete Guide</h3>
           <p style="font-size:13px;color:var(--text-muted);line-height:1.6;">Why handwriting your budget beats spreadsheets, and which templates to use for each scenario.</p>
           <p style="font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-top:16px;">Read guide &rarr;</p>
         </a>
-        <a href="/guides/digital-planning-2026.html" style="background:#fff;border:1px solid rgba(30,45,61,0.07);border-radius:4px;padding:28px;text-decoration:none;display:block;box-shadow:0 2px 16px rgba(30,45,61,0.06);transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 28px rgba(30,45,61,0.12)'" onmouseout="this.style.transform='';this.style.boxShadow='0 2px 16px rgba(30,45,61,0.06)'">
+        <a href="/guides/digital-planning-2026.html" class="guide-teaser-card">
           <p style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">Comparison</p>
           <h3 style="font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:var(--navy);margin-bottom:10px;line-height:1.4;">reMarkable vs GoodNotes vs Notability in 2026</h3>
           <p style="font-size:13px;color:var(--text-muted);line-height:1.6;">Which app is best for digital planning? We break down templates, usability, and long-term value.</p>
@@ -874,6 +952,25 @@
   </footer>
 
   <script>
+    // Hamburger menu
+    (function() {
+      var toggle = document.getElementById('navToggle');
+      var links = document.querySelector('.nav-links');
+      if (!toggle || !links) return;
+      toggle.addEventListener('click', function() {
+        var open = links.classList.toggle('open');
+        toggle.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+      document.addEventListener('click', function(e) {
+        if (!toggle.contains(e.target) && !links.contains(e.target)) {
+          links.classList.remove('open');
+          toggle.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+
     // Progressive image reveal
     document.querySelectorAll('.card-image img').forEach(function(img) {
       var placeholder = img.previousElementSibling;

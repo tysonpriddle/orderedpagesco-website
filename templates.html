@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>30 Free reMarkable Templates — Ordered Pages Co</title>
   <meta name="description" content="Download 30 free reMarkable templates for budgeting, planning, and wellness. Compatible with GoodNotes and Notability. Instant download, no sign-up required.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="30 Free reMarkable Templates — Ordered Pages Co">
+  <meta property="og:description" content="Budget trackers, daily planners, wellness journals — 30 free templates for reMarkable, GoodNotes &amp; Notability. No sign-up required.">
+  <meta property="og:url" content="https://orderedpagesco.com/templates.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ordered Pages Co">
+  <meta property="og:image" content="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-budget-weekly-001.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -614,6 +621,22 @@
       .gallery-section { padding: 32px 20px 48px; }
       .filter-bar { padding: 0 20px; }
     }
+    /* ── HAMBURGER ── */
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; flex-shrink: 0; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: rgba(247,244,239,0.8); border-radius: 2px; transition: transform 0.22s, opacity 0.22s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-hamburger { display: flex; }
+      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: var(--navy); flex-direction: column; padding: 16px 24px 24px; gap: 0; border-top: 1px solid rgba(184,137,90,0.2); z-index: 99; }
+      .nav-links.open { display: flex; }
+      .nav-links li { border-bottom: 1px solid rgba(247,244,239,0.06); }
+      .nav-links a { display: block; padding: 13px 0; font-size: 14px; letter-spacing: 1px; }
+      .nav-links .cta-link { margin-top: 12px; text-align: center; display: block; padding: 12px 20px; }
+      .nav-name { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -625,11 +648,15 @@
       <span class="nav-name">Ordered Pages Co</span>
     </a>
     <ul class="nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/templates.html" class="active">Templates</a></li>
+      <li><a href="/templates.html" class="active">Free Templates</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li><a href="/about.html">About</a></li>
       <li><a href="https://www.etsy.com/au/shop/OrderedPagesCo" target="_blank" rel="noopener">Etsy Shop</a></li>
-      <li><a href="https://orderedpagesco.gumroad.com" target="_blank" rel="noopener" class="cta-link">Get Bundle</a></li>
+      <li><a href="https://orderedpages.gumroad.com" target="_blank" rel="noopener" class="cta-link">Free Download</a></li>
     </ul>
+    <button class="nav-hamburger" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- HERO -->
@@ -1309,6 +1336,25 @@
       }
     });
 
+    // Hamburger menu
+    (function() {
+      var toggle = document.getElementById('navToggle');
+      var links = document.querySelector('.nav-links');
+      if (!toggle || !links) return;
+      toggle.addEventListener('click', function() {
+        var open = links.classList.toggle('open');
+        toggle.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+      document.addEventListener('click', function(e) {
+        if (!toggle.contains(e.target) && !links.contains(e.target)) {
+          links.classList.remove('open');
+          toggle.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+
     // Filter logic — all values are static strings, no dynamic HTML insertion
     var filterBtns = document.querySelectorAll('.filter-btn');
     var cards = document.querySelectorAll('.template-card');
@@ -1347,6 +1393,16 @@
           : 'Showing ' + visible + ' template' + (visible !== 1 ? 's' : '');
       });
     });
+
+    // Activate filter from URL hash (e.g. /templates.html#budget)
+    (function() {
+      var hash = window.location.hash.replace('#', '');
+      var validFilters = ['budget', 'planner', 'wellness'];
+      if (validFilters.indexOf(hash) !== -1) {
+        var matchBtn = document.querySelector('.filter-btn[data-filter="' + hash + '"]');
+        if (matchBtn) { matchBtn.click(); }
+      }
+    })();
   </script>
 
 </body>

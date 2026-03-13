@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guides — Ordered Pages Co</title>
   <meta name="description" content="Step-by-step guides for using digital planner templates on reMarkable, GoodNotes, and Notability. Setup, budgeting tips, and more.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Guides — Ordered Pages Co">
+  <meta property="og:description" content="Setup tutorials, tips, and comparisons for digital planners. How to use reMarkable templates, budgeting guides, and app comparisons.">
+  <meta property="og:url" content="https://orderedpagesco.com/guides/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ordered Pages Co">
+  <meta property="og:image" content="https://raw.githubusercontent.com/tysonpriddle/ordered-pages-assets/main/remarkable/rm-plan-daily-011.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -35,12 +42,27 @@
     .guide-excerpt { font-size: 13px; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px; }
     .guide-link { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--gold); }
     footer { background: #151F2B; padding: 36px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-    .footer-brand { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(247,244,239,0.3); }
+    .footer-brand { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(247,244,239,0.55); }
     .footer-links { display: flex; gap: 24px; list-style: none; }
-    .footer-links a { font-size: 12px; color: rgba(247,244,239,0.3); text-decoration: none; transition: color 0.2s; }
+    .footer-links a { font-size: 12px; color: rgba(247,244,239,0.55); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--gold); }
     @media (max-width: 900px) { .guides-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 600px) { nav { padding: 0 20px; } .nav-name { display: none; } .guides-grid { grid-template-columns: 1fr; padding: 40px 20px; } footer { flex-direction: column; align-items: center; } }
+
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; flex-shrink: 0; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: rgba(247,244,239,0.8); border-radius: 2px; transition: transform 0.22s, opacity 0.22s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; } .nav-hamburger { display: flex; }
+      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #1D1A13; flex-direction: column; padding: 16px 24px 24px; gap: 0; border-top: 1px solid rgba(184,137,90,0.2); z-index: 99; }
+      .nav-links.open { display: flex; }
+      .nav-links li { border-bottom: 1px solid rgba(247,244,239,0.06); }
+      .nav-links a { display: block; padding: 13px 0; font-size: 14px; }
+      .nav-links .cta-link { margin-top: 12px; text-align: center; display: block; padding: 12px 20px; }
+      .nav-name { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -58,6 +80,9 @@
       <li><a href="https://www.etsy.com/au/shop/OrderedPagesCo" target="_blank" rel="noopener">Etsy Shop</a></li>
       <li><a href="https://orderedpages.gumroad.com" target="_blank" rel="noopener" class="cta-link">Free Download</a></li>
     </ul>
+    <button class="nav-hamburger" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <div class="page-hero">
@@ -101,5 +126,24 @@
     </ul>
   </footer>
 
+  <script>
+    (function() {
+      var toggle = document.getElementById('navToggle');
+      var links = document.querySelector('.nav-links');
+      if (!toggle || !links) return;
+      toggle.addEventListener('click', function() {
+        var open = links.classList.toggle('open');
+        toggle.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+      document.addEventListener('click', function(e) {
+        if (!toggle.contains(e.target) && !links.contains(e.target)) {
+          links.classList.remove('open');
+          toggle.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

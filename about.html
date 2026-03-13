@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — Ordered Pages Co</title>
   <meta name="description" content="Ordered Pages Co makes free minimal digital planner templates for reMarkable, GoodNotes, and Notability. No sign-up, no fluff, just clean pages.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="About — Ordered Pages Co">
+  <meta property="og:description" content="We make free minimal digital planner templates for reMarkable, GoodNotes, and Notability. No sign-up, no tracking, just clean pages.">
+  <meta property="og:url" content="https://orderedpagesco.com/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ordered Pages Co">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -26,10 +32,15 @@
     .nav-links a:hover, .nav-links a.active { color: var(--gold); }
     .nav-links .cta-link { background: var(--gold); color: var(--navy); padding: 8px 20px; font-weight: 600; }
     footer { background: #151F2B; padding: 36px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-    .footer-brand { font-family: 'Jost', sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(247,244,239,0.3); }
+    .footer-brand { font-family: 'Jost', sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(247,244,239,0.55); }
     .footer-links { display: flex; gap: 24px; list-style: none; }
-    .footer-links a { font-size: 12px; color: rgba(247,244,239,0.3); text-decoration: none; letter-spacing: 0.5px; transition: color 0.2s; }
+    .footer-links a { font-size: 12px; color: rgba(247,244,239,0.55); text-decoration: none; letter-spacing: 0.5px; transition: color 0.2s; }
     .footer-links a:hover { color: var(--gold); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; flex-shrink: 0; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: rgba(247,244,239,0.8); border-radius: 2px; transition: transform 0.22s, opacity 0.22s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     .page-hero { background: var(--dark); padding: 80px 40px; text-align: center; position: relative; overflow: hidden; }
     .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(184,137,90,0.08) 0%, transparent 65%); pointer-events: none; }
     .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 48px); font-weight: 400; color: var(--off-white); letter-spacing: 2px; margin-bottom: 12px; }
@@ -48,8 +59,16 @@
     .cta-block h3 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 400; color: var(--off-white); margin-bottom: 12px; }
     .cta-block p { font-size: 14px; color: rgba(247,244,239,0.55); margin-bottom: 24px; }
     .btn-gold { display: inline-block; background: var(--gold); color: var(--navy); text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 14px 32px; border-radius: 2px; }
-    @media (max-width: 700px) {
-      nav { padding: 0 20px; } .nav-name { display: none; }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; } .nav-hamburger { display: flex; }
+      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: var(--dark); flex-direction: column; padding: 16px 24px 24px; gap: 0; border-top: 1px solid rgba(184,137,90,0.2); z-index: 99; }
+      .nav-links.open { display: flex; }
+      .nav-links li { border-bottom: 1px solid rgba(247,244,239,0.06); }
+      .nav-links a { display: block; padding: 13px 0; font-size: 14px; }
+      .nav-links .cta-link { margin-top: 12px; text-align: center; display: block; padding: 12px 20px; }
+      .nav-name { display: none; }
+    }
+    @media (max-width: 600px) {
       .content { padding: 48px 20px; } .values-grid { grid-template-columns: 1fr; }
       footer { flex-direction: column; align-items: center; }
     }
@@ -63,13 +82,15 @@
       <span class="nav-name">Ordered Pages Co</span>
     </a>
     <ul class="nav-links">
-      <li><a href="/">Home</a></li>
       <li><a href="/templates.html">Free Templates</a></li>
       <li><a href="/guides/">Guides</a></li>
       <li><a href="/about.html" class="active">About</a></li>
       <li><a href="https://www.etsy.com/au/shop/OrderedPagesCo" target="_blank" rel="noopener">Etsy Shop</a></li>
       <li><a href="https://orderedpages.gumroad.com" target="_blank" rel="noopener" class="cta-link">Free Download</a></li>
     </ul>
+    <button class="nav-hamburger" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <div class="page-hero">
@@ -139,5 +160,24 @@
     </ul>
   </footer>
 
+  <script>
+    (function() {
+      var toggle = document.getElementById('navToggle');
+      var links = document.querySelector('.nav-links');
+      if (!toggle || !links) return;
+      toggle.addEventListener('click', function() {
+        var open = links.classList.toggle('open');
+        toggle.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+      document.addEventListener('click', function(e) {
+        if (!toggle.contains(e.target) && !links.contains(e.target)) {
+          links.classList.remove('open');
+          toggle.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
