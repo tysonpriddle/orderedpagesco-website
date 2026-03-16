@@ -562,6 +562,37 @@
       letter-spacing: 0.5px;
     }
 
+    /* ── BUNDLE NUDGE BAR ── */
+    .bundle-nudge {
+      background: var(--gold-light);
+      border-top: 1px solid var(--gold-border);
+      border-bottom: 1px solid var(--gold-border);
+      padding: 10px 40px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+    }
+
+    .bundle-nudge span {
+      color: var(--text-muted);
+    }
+
+    .bundle-nudge a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    .bundle-nudge a:hover { opacity: 0.75; }
+
+    .bundle-nudge[data-hidden="true"] { display: none; }
+
+    @media (max-width: 600px) {
+      .bundle-nudge { padding: 10px 20px; flex-wrap: wrap; gap: 6px; }
+    }
+
     /* ── BUNDLE CARDS ── */
     .bundle-grid {
       display: grid;
@@ -806,6 +837,12 @@
     <button class="filter-btn" data-filter="wellness" role="tab" aria-selected="false">
       Wellness <span class="filter-count">10</span>
     </button>
+  </div>
+
+  <!-- BUNDLE NUDGE BAR -->
+  <div class="bundle-nudge" id="bundle-nudge">
+    <span id="nudge-text">Want the full set?</span>
+    <a id="nudge-link" href="https://orderedpages.gumroad.com/l/wmbgto" target="_blank" rel="noopener">Get all 10 Budget templates — $9 &rarr;</a>
   </div>
 
   <!-- GALLERY -->
@@ -1517,6 +1554,22 @@
         galleryCount.textContent = filter === 'all'
           ? 'Showing all 30 templates'
           : 'Showing ' + visible + ' template' + (visible !== 1 ? 's' : '');
+
+        // Update bundle nudge bar
+        var nudge = document.getElementById('bundle-nudge');
+        var nudgeLink = document.getElementById('nudge-link');
+        var nudgeMap = {
+          budget:   { text: 'Get all 10 Budget templates — $9', href: 'https://orderedpages.gumroad.com/l/wmbgto' },
+          planner:  { text: 'Get all 10 Planner templates — $9', href: 'https://orderedpages.gumroad.com/l/fbxtg' },
+          wellness: { text: 'Get all 10 Wellness templates — $9', href: 'https://orderedpages.gumroad.com/l/gevomw' },
+        };
+        if (nudgeMap[filter]) {
+          nudgeLink.textContent = nudgeMap[filter].text + ' \u2192';
+          nudgeLink.href = nudgeMap[filter].href;
+          nudge.removeAttribute('data-hidden');
+        } else {
+          nudge.setAttribute('data-hidden', 'true');
+        }
       });
     });
 
